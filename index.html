@@ -100,6 +100,87 @@
     img { -webkit-user-drag: none; -webkit-touch-callout: none; }
 
     /* ============================
+       NOTIFICATION BANNER
+    ============================ */
+    #event-banner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 1100;
+      background: rgba(12,12,12,0.94);
+      border-top: 1px solid rgba(200,16,46,0.35);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      padding: 0.75rem 1.5rem;
+      padding-left: max(1.5rem, env(safe-area-inset-left));
+      padding-right: max(1.5rem, env(safe-area-inset-right));
+      padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.45);
+    }
+    #event-banner.show { transform: translateY(0); }
+    .banner-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+      animation: bannerPulse 1.8s ease-in-out infinite;
+    }
+    @keyframes bannerPulse {
+      0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(200,16,46,0.55); }
+      50% { opacity: 0.7; box-shadow: 0 0 0 5px rgba(200,16,46,0); }
+    }
+    .banner-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      flex-shrink: 0;
+    }
+    .banner-text {
+      flex: 1;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: rgba(245,245,240,0.85);
+    }
+    .banner-text strong { color: var(--white); font-weight: 500; }
+    .banner-link {
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      border: 1px solid rgba(200,16,46,0.5);
+      padding: 0.35rem 0.8rem;
+      transition: all 0.3s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .banner-link:hover { background: var(--red); color: var(--white); border-color: var(--red); }
+    .banner-close {
+      background: none;
+      border: none;
+      color: var(--gray-light);
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1;
+      padding: 0.3rem;
+      flex-shrink: 0;
+      transition: color 0.3s;
+      min-height: 44px;
+      display: flex; align-items: center;
+    }
+    .banner-close:hover { color: var(--white); }
+    @media (max-width: 600px) {
+      #event-banner { gap: 0.6rem; padding: 0.7rem 1rem; padding-bottom: calc(0.7rem + env(safe-area-inset-bottom)); }
+      .banner-label { display: none; }
+      .banner-text { font-size: 0.68rem; }
+      .banner-link { font-size: 0.58rem; padding: 0.3rem 0.65rem; }
+    }
+
+    /* ============================
        NAVIGATION
     ============================ */
     nav {
@@ -401,7 +482,6 @@
       box-shadow:
         0 18px 60px rgba(0,0,0,0.34),
         inset 0 1px 0 rgba(255,255,255,0.03);
-      -webkit-
       position: relative;
       overflow: hidden;
     }
@@ -943,11 +1023,6 @@
       font-size: 0.65rem;
       color: var(--gray-light);
     }
-    .footer-eagle {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      opacity: 0.3;
-    }
 
     /* ============================
        ANIMATIONS
@@ -976,6 +1051,7 @@
     ============================ */
     @media (max-width: 900px) {
       nav { padding: 0.9rem 1.2rem; }
+      nav.scrolled { padding: 0.7rem 1.2rem; }
       .nav-links {
         display: none;
         -webkit-flex-direction: column;
@@ -990,16 +1066,21 @@
       .nav-links.open { display: -webkit-flex; display: flex; }
       .hamburger { display: -webkit-flex; display: flex; }
       section { padding: 4rem 1.2rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .section-inner { padding: 2rem 1.4rem; }
+      .section-header { margin-bottom: 3rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .gallery-grid { grid-template-columns: 1fr 1fr; }
       .gallery-item.wide { grid-column: span 1; }
       .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
       .event-item { grid-template-columns: 70px 1fr; }
       .event-tag { display: none; }
       .about-stats { grid-template-columns: repeat(3, 1fr); }
+      .footer-links { flex-wrap: wrap; gap: 1rem 1.5rem; }
     }
     @media (max-width: 600px) {
-      .hero-title { font-size: 2.4rem; }
+      .hero-title { font-size: clamp(2rem, 8vw, 2.6rem); }
+      .hero-subtitle { font-size: 0.68rem; letter-spacing: 0.15em; }
+      .hero-cta { font-size: 0.65rem; padding: 0.8rem 1.8rem; }
       .gallery-grid { grid-template-columns: 1fr; }
       .gallery-item.tall { grid-row: span 1; }
       .about-stats { grid-template-columns: 1fr 1fr; }
@@ -1008,14 +1089,27 @@
       .lang-btn { padding: 0.5rem 0.8rem; font-size: 0.7rem; }
       .nav-logo-shell { width: 56px; height: 56px; }
       .nav-logo-svg { width: 48px; height: 48px; }
-      .hero-logo-shell { width: 150px; height: 150px; }
-      .hero-logo { width: 136px; height: 136px; }
-      section { padding: 3.5rem 1rem; }
+      .hero-logo-shell { width: 140px; height: 140px; }
+      .hero-logo { width: 126px; height: 126px; }
+      section { padding: 3rem 0.9rem; }
+      .section-inner { padding: 1.5rem 1rem; }
+      .section-header { margin-bottom: 2.5rem; }
+      .event-item { grid-template-columns: 60px 1fr; gap: 1rem; }
+      .footer-links { flex-direction: column; gap: 0.75rem; align-items: center; }
+      footer { padding: 2rem 1rem; }
     }
-    /* iOS safe area for footer */
+    /* Extra small screens */
+    @media (max-width: 380px) {
+      .hero-title { font-size: 1.8rem; }
+      .section-inner { padding: 1.2rem 0.8rem; }
+      .nav-logo-text { display: none; }
+    }
+    /* iOS safe area for footer — also add space for event banner */
     footer {
       padding-bottom: calc(2rem + env(safe-area-inset-bottom));
     }
+    /* Add bottom padding to last section so banner doesn't overlap */
+    body { padding-bottom: 60px; }
 
     /* ============================
        PLACEHOLDER IMAGES
@@ -1060,6 +1154,29 @@
 </head>
 
 <body class="lang-de">
+
+<!-- ============================
+     EVENT NOTIFICATION BANNER
+============================ -->
+<div id="event-banner" role="status" aria-live="polite">
+  <div class="banner-dot"></div>
+  <span class="banner-label">
+    <span data-lang="de" class="inline">N&auml;chster Auftritt</span>
+    <span data-lang="al" class="inline">Paraqitja e ardhshme</span>
+    <span data-lang="en" class="inline">Next Performance</span>
+  </span>
+  <span class="banner-text">
+    <span data-lang="de" class="inline"><strong>Auftritt in Graz</strong> &mdash; Mai 2026</span>
+    <span data-lang="al" class="inline"><strong>Paraqitje n&euml; Graz</strong> &mdash; Maj 2026</span>
+    <span data-lang="en" class="inline"><strong>Performance in Graz</strong> &mdash; May 2026</span>
+  </span>
+  <a href="#events" class="banner-link" onclick="document.getElementById('event-banner').classList.remove('show')">
+    <span data-lang="de" class="inline">Details</span>
+    <span data-lang="al" class="inline">Detaje</span>
+    <span data-lang="en" class="inline">Details</span>
+  </a>
+  <button class="banner-close" onclick="dismissBanner()" aria-label="Schließen">&times;</button>
+</div>
 
 <!-- ============================
      LIGHTBOX
@@ -1703,7 +1820,6 @@
      FOOTER
 ============================ -->
 <footer>
-  <div class="footer-eagle">&#9679; &#9679; &#9679;</div>
   <div class="footer-logo">AKV <span>"Hyjnesha"</span></div>
   <div class="footer-sub">Graz &bull; Austria &bull; Est. 2022</div>
   <ul class="footer-links">
@@ -1830,6 +1946,18 @@
       const nextQuote = (activeQuote + 1) % quoteSlides.length;
       setActiveQuote(nextQuote);
     }, 5000);
+  }
+
+  /* --- Event notification banner --- */
+  function dismissBanner() {
+    const banner = document.getElementById('event-banner');
+    banner.classList.remove('show');
+    sessionStorage.setItem('hyjnesha-banner-dismissed', '1');
+  }
+  if (!sessionStorage.getItem('hyjnesha-banner-dismissed')) {
+    setTimeout(() => {
+      document.getElementById('event-banner').classList.add('show');
+    }, 1800);
   }
 
   /* --- Contact form (mailto fallback) --- */
