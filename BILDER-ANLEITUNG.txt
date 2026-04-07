@@ -1,0 +1,42 @@
+====================================================
+  AKV "HYJNESHA" – BILDER-ANLEITUNG
+  Alle Bilder kommen in den Ordner: images/
+====================================================
+
+1. images/logo.png
+   → Dein Logo (das schwarze mit der Hyjnesha-Figur und dem Kreis)
+   → Empfehlung: auf transparentem Hintergrund speichern (PNG)
+
+2. images/hero-bg.jpg
+   → Das HAUPTBILD für den Hero-Bereich (Fullscreen oben)
+   → Empfehlung: Das Bühnenbild mit den Tänzerinnen in roten Kostümen
+      ODER das künstlerische S/W Foto der Tänzerin unter den Scheinwerfern
+
+3. images/about.jpg
+   → Das Bild im "Über uns" Bereich
+   → Empfehlung: Das S/W Proben-Foto (Gruppe im Kreis sitzend)
+
+4. images/gallery1.jpg  (groß, hochformat)
+   → Empfehlung: Das künstlerische S/W Porträt der Tänzerin
+
+5. images/gallery2.jpg
+   → Empfehlung: Die Tänzerin mit dem farbigen Kopftuch (Nahaufnahme)
+
+6. images/gallery3.jpg
+   → Empfehlung: Bühnenbild mit allen Tänzerinnen in roten Kostümen
+
+7. images/gallery4.jpg  (breit, querformat)
+   → Empfehlung: Die 3 Männer in albanischen Trachten vor dem Mausoleum Graz
+
+8. images/gallery5.jpg
+   → Weitere Fotos die du hast (z.B. Sizilien-Auftritt)
+
+9. images/gallery6.jpg
+   → Weiteres Foto (z.B. Gruppenaufnahme)
+
+====================================================
+TIPPS:
+- Bilder können JPG oder PNG sein
+- Für beste Qualität: mindestens 1200px breit
+- Du kannst jederzeit mehr Fotos hinzufügen – dann einfach Bescheid geben!
+====================================================
