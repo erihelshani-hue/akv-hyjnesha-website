@@ -19,15 +19,21 @@
     ============================ */
     :root {
       --black: #0a0a0a;
+      --black-deep: #050505;
       --white: #f5f5f0;
       --red: #C8102E;
       --red-dark: #9a0b22;
+      --red-soft: rgba(200,16,46,0.1);
       --gray-dark: #1a1a1a;
       --gray-mid: #2d2d2d;
       --gray-light: #888;
+      --panel: rgba(12,12,12,0.78);
+      --panel-strong: rgba(18,18,18,0.92);
+      --line-soft: rgba(255,255,255,0.08);
       --gold: #c9a84c;
       --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-sans: 'Montserrat', Arial, sans-serif;
+      --bg-motif: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 1600'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.88)' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke-width='12' d='M600 304c-36 9-66 34-90 77-17 31-30 67-38 109-30-34-70-67-121-97-79-47-158-76-240-88 54 37 91 81 109 131-58-18-120-21-186-8 64 20 118 52 163 96-53 3-105 18-155 47 76 7 139 27 190 62-43 18-83 48-119 92 67-6 126 3 179 26-33 28-61 65-83 113 60-18 116-19 169-3 7 111 46 246 121 405 75-159 114-294 121-405 53-16 109-15 169 3-22-48-50-85-83-113 53-23 112-32 179-26-36-44-76-74-119-92 51-35 114-55 190-62-50-29-102-44-155-47 45-44 99-76 163-96-66-13-128-10-186 8 18-50 55-94 109-131-82 12-161 41-240 88-51 30-91 63-121 97-8-42-21-78-38-109-24-43-54-68-90-77Z'/%3E%3Cpath stroke-width='9' d='M600 362c-26 18-46 48-58 89 18 24 38 46 58 67 20-21 40-43 58-67-12-41-32-71-58-89Z'/%3E%3Cpath stroke-width='9' d='M444 487c31 9 57 27 78 54-35-6-72-3-112 10 29 10 55 26 79 48-36 2-69 13-101 33 48 6 88 21 122 47'/%3E%3Cpath stroke-width='9' d='M756 487c-31 9-57 27-78 54 35-6 72-3 112 10-29 10-55 26-79 48 36 2 69 13 101 33-48 6-88 21-122 47'/%3E%3Cpath stroke-width='11' d='M485 592c33 34 71 51 115 51s82-17 115-51'/%3E%3Cpath stroke-width='8' d='M412 624c42 18 80 45 114 82M788 624c-42 18-80 45-114 82'/%3E%3Cpath stroke-width='7' d='M392 721c37 10 70 27 100 52M808 721c-37 10-70 27-100 52'/%3E%3Cpath stroke-width='10' d='M525 684c-18 54-28 113-28 177 0 123 35 256 103 399 68-143 103-276 103-399 0-64-10-123-28-177'/%3E%3Cpath stroke-width='8' d='M545 777c16 18 35 27 55 27s39-9 55-27'/%3E%3Cpath stroke-width='7' d='M532 884c20 15 43 23 68 23s48-8 68-23'/%3E%3Cpath stroke-width='7' d='M524 1017c23 14 48 21 76 21s53-7 76-21'/%3E%3Cpath stroke-width='7' d='M490 1110c24 12 45 30 62 54-28-4-52 2-74 18 34 4 60 17 80 40'/%3E%3Cpath stroke-width='7' d='M710 1110c-24 12-45 30-62 54 28-4 52 2 74 18-34 4-60 17-80 40'/%3E%3Cpath stroke-width='8' d='M566 1219c10 41 21 73 34 97 13-24 24-56 34-97'/%3E%3Cpath stroke-width='7' d='M598 1307c-22 26-44 43-67 53 28 6 51 20 69 42 18-22 41-36 69-42-23-10-45-27-67-53Z'/%3E%3Cpath stroke-width='6' d='M421 1240c-23 3-46 16-69 37 10-27 11-51 4-74-17 20-36 33-58 40 11-26 12-49 3-70M779 1240c23 3 46 16 69 37-10-27-11-51-4-74 17 20 36 33 58 40-11-26-12-49-3-70'/%3E%3C/g%3E%3C/svg%3E");
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html {
@@ -36,7 +42,10 @@
       overflow-x: hidden;
     }
     body {
-      background: var(--black);
+      background:
+        radial-gradient(circle at top, rgba(200,16,46,0.08), transparent 24%),
+        radial-gradient(circle at 15% 30%, rgba(200,16,46,0.04), transparent 20%),
+        linear-gradient(180deg, #060606 0%, #090909 35%, #050505 100%);
       color: var(--white);
       font-family: var(--font-sans);
       font-weight: 300;
@@ -48,6 +57,33 @@
       -webkit-overflow-scrolling: touch;
       /* iOS: remove tap highlight */
       -webkit-tap-highlight-color: transparent;
+      position: relative;
+      isolation: isolate;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        var(--bg-motif) center 120px / min(70vw, 760px) auto no-repeat,
+        radial-gradient(circle at center, rgba(255,255,255,0.02), transparent 42%);
+      opacity: 0.045;
+      pointer-events: none;
+      z-index: 0;
+      filter: grayscale(1) contrast(1.02);
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.04) 26%, rgba(0,0,0,0.24) 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body > * {
+      position: relative;
+      z-index: 1;
     }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
@@ -83,7 +119,7 @@
       background: rgba(10,10,10,0.95);
       -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(200,16,46,0.2);
+      border-bottom: 1px solid rgba(200,16,46,0.08);
       transition: padding 0.3s;
     }
     nav.scrolled { padding: 0.8rem 3rem; }
@@ -101,7 +137,7 @@
       flex-shrink: 0;
       border: 1px solid rgba(200,16,46,0.25);
       background:
-        radial-gradient(circle at 50% 35%, rgba(200,16,46,0.16), transparent 52%),
+        radial-gradient(circle at 50% 35%, rgba(200,16,46,0.08), transparent 52%),
         radial-gradient(circle at 50% 50%, rgba(255,255,255,0.06), transparent 70%),
         linear-gradient(180deg, rgba(26,26,26,0.96), rgba(10,10,10,0.98));
       box-shadow:
@@ -236,9 +272,10 @@
       inset: 0;
       background: linear-gradient(
         180deg,
-        rgba(10,10,10,0.3) 0%,
-        rgba(10,10,10,0.1) 50%,
-        rgba(10,10,10,0.7) 100%
+        rgba(5,5,5,0.44) 0%,
+        rgba(10,10,10,0.18) 38%,
+        rgba(200,16,46,0.08) 60%,
+        rgba(5,5,5,0.82) 100%
       );
     }
     .hero-content {
@@ -255,7 +292,7 @@
       box-shadow:
         inset 0 0 48px rgba(0,0,0,0.54),
         0 18px 42px rgba(0,0,0,0.32),
-        0 0 50px rgba(200,16,46,0.18);
+        0 0 24px rgba(200,16,46,0.08);
       animation: fadeInDown 1.2s ease both;
     }
     .hero-logo {
@@ -349,7 +386,29 @@
        SECTION COMMON STYLES
     ============================ */
     section { padding: 7rem 3rem; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
+    #about, #gallery, #events, #contact, footer {
+      background: transparent;
+    }
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.2rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)),
+        linear-gradient(145deg, rgba(200,16,46,0.04), transparent 24%),
+        var(--panel);
+      box-shadow:
+        0 18px 60px rgba(0,0,0,0.34),
+        inset 0 1px 0 rgba(255,255,255,0.03);
+      -webkit-
+      position: relative;
+      overflow: hidden;
+    }
+    .section-inner > * {
+      position: relative;
+      z-index: 1;
+    }
     .section-header { text-align: center; margin-bottom: 5rem; }
     .section-tag {
       display: inline-block;
@@ -379,7 +438,7 @@
     /* ============================
        ABOUT SECTION
     ============================ */
-    #about { background: var(--gray-dark); }
+    #about { padding-top: 2rem; }
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -486,7 +545,7 @@
     .bio-card {
       padding: 1.25rem;
       background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(200,16,46,0.18);
+      border: 1px solid rgba(200,16,46,0.12);
     }
     .bio-card h3 {
       font-family: var(--font-serif);
@@ -510,7 +569,7 @@
     /* ============================
        GALLERY SECTION
     ============================ */
-    #gallery { background: var(--black); }
+    #gallery { padding-top: 2rem; }
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -576,7 +635,7 @@
     /* ============================
        EVENTS SECTION
     ============================ */
-    #events { background: var(--gray-dark); }
+    #events { padding-top: 2rem; }
     .events-tabs {
       display: flex;
       gap: 0;
@@ -655,9 +714,59 @@
        QUOTE SECTION
     ============================ */
     #quote {
-      background: var(--red);
+      background: linear-gradient(145deg, rgba(140,8,28,0.88), rgba(200,16,46,0.9));
       padding: 5rem 3rem;
       text-align: center;
+      overflow: hidden;
+    }
+    #quote::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.06), transparent 36%);
+      opacity: 0.06;
+      pointer-events: none;
+    }
+    .quote-slider {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .quote-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 2.2rem;
+    }
+    .quote-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: rgba(245,245,240,0.45);
+      transition: transform 0.35s ease, background 0.35s ease, opacity 0.35s ease;
+      opacity: 0.8;
+    }
+    .quote-dot.active {
+      background: var(--white);
+      transform: scale(1.35);
+      opacity: 1;
+    }
+    .quote-slides {
+      position: relative;
+      min-height: 220px;
+    }
+    .quote-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+      pointer-events: none;
+    }
+    .quote-slide.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
     }
     .quote-text {
       font-family: var(--font-serif);
@@ -683,7 +792,7 @@
     /* ============================
        CONTACT SECTION
     ============================ */
-    #contact { background: var(--black); }
+    #contact { padding-top: 2rem; }
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -791,10 +900,15 @@
        FOOTER
     ============================ */
     footer {
-      background: var(--gray-dark);
-      border-top: 1px solid var(--gray-mid);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)),
+        linear-gradient(145deg, rgba(200,16,46,0.04), transparent 28%),
+        var(--panel-strong);
+      border-top: 1px solid rgba(255,255,255,0.06);
       padding: 3rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
     .footer-logo {
       font-family: var(--font-serif);
@@ -1025,7 +1139,7 @@
     <div class="about-grid">
       <!-- Image side -->
       <div class="about-img-wrap reveal">
-        <img src="images/475816159_17896408743134476_7011167202050878049_n.jpg" alt="AKV Hyjnesha &ndash; Gegr&uuml;ndet 2022"
+        <img src="images/WhatsApp Image 2026-04-07 at 21.15.51.jpeg" alt="AKV Hyjnesha &ndash; Gegr&uuml;ndet 2022"
              onerror="this.style.background='#1a1a1a';this.style.minHeight='500px'" />
         <div class="about-badge">
           <div class="num">2022</div>
@@ -1107,7 +1221,7 @@
                 <span data-lang="al" class="inline">Themeluese &amp; Drejtore Artistike</span>
                 <span data-lang="en" class="inline">Founder &amp; Artistic Director</span>
               </div>
-              <div class="name">Xheylane Ra&ccedil;a</div>
+              <div class="name">Xhejlane Ra&ccedil;a</div>
             </div>
           </div>
           <div class="team-member">
@@ -1125,16 +1239,16 @@
 
         <div class="about-bios">
           <div class="bio-card">
-            <h3>Xheylane Ra&ccedil;a</h3>
+            <h3>Xhejlane Ra&ccedil;a</h3>
             <div class="bio-role">
               <span data-lang="de" class="inline">Kurze Biografie</span>
               <span data-lang="al" class="inline">Biografi e shkurt&euml;r</span>
               <span data-lang="en" class="inline">Short biography</span>
             </div>
             <p>
-              <span data-lang="de">Platzhalter: Hier kommt eine kurze Biografie &uuml;ber Xheylane Ra&ccedil;a als Gr&uuml;nderin und k&uuml;nstlerische Leiterin des Ensembles hin.</span>
-              <span data-lang="al">Mbajt&euml;s vendi: K&euml;tu do t&euml; vij&euml; nj&euml; biografi e shkurt&euml;r p&euml;r Xheylane Ra&ccedil;a si themeluese dhe drejtoresh&euml; artistike e ansamblit.</span>
-              <span data-lang="en">Placeholder: A short biography of Xheylane Ra&ccedil;a as founder and artistic director of the ensemble will be added here.</span>
+              <span data-lang="de">Platzhalter: Hier kommt eine kurze Biografie &uuml;ber Xhejlane Ra&ccedil;a als Gr&uuml;nderin und k&uuml;nstlerische Leiterin des Ensembles hin.</span>
+              <span data-lang="al">Mbajt&euml;s vendi: K&euml;tu do t&euml; vij&euml; nj&euml; biografi e shkurt&euml;r p&euml;r Xhejlane Ra&ccedil;a si themeluese dhe drejtoresh&euml; artistike e ansamblit.</span>
+              <span data-lang="en">Placeholder: A short biography of Xhejlane Ra&ccedil;a as founder and artistic director of the ensemble will be added here.</span>
             </p>
           </div>
           <div class="bio-card">
@@ -1237,13 +1351,39 @@
      QUOTE
 ============================ -->
 <section id="quote">
-  <div class="eagle-divider">&#9679; &#9679; &#9679;</div>
-  <p class="quote-text">
-    <span data-lang="de">&bdquo;Traditionelle T&auml;nze, die mit eigener Seele tanzen &ndash; das ist der Geist von Hyjnesha.&ldquo;</span>
-    <span data-lang="al">&ldquo;Valle tradicionale q&euml; k&euml;rcejn&euml; me shpirt t&euml; vet &ndash; ky &euml;sht&euml; shpirti i Hyjnesh&euml;s.&rdquo;</span>
-    <span data-lang="en">&ldquo;Traditional dances that dance with their own soul &ndash; this is the spirit of Hyjnesha.&rdquo;</span>
-  </p>
-  <p class="quote-attr">AKV &ldquo;Hyjnesha&rdquo; &mdash; Graz, Austria</p>
+  <div class="quote-slider" id="quoteSlider">
+    <div class="quote-dots" aria-hidden="true">
+      <span class="quote-dot active"></span>
+      <span class="quote-dot"></span>
+      <span class="quote-dot"></span>
+    </div>
+    <div class="quote-slides">
+      <div class="quote-slide active">
+        <p class="quote-text">
+          <span data-lang="de">&bdquo;Traditionelle T&auml;nze, die mit eigener Seele tanzen &ndash; das ist der Geist von Hyjnesha.&ldquo;</span>
+          <span data-lang="al">&ldquo;Valle tradicionale q&euml; k&euml;rcejn&euml; me shpirt t&euml; vet &ndash; ky &euml;sht&euml; shpirti i Hyjnesh&euml;s.&rdquo;</span>
+          <span data-lang="en">&ldquo;Traditional dances that dance with their own soul &ndash; this is the spirit of Hyjnesha.&rdquo;</span>
+        </p>
+        <p class="quote-attr">AKV &ldquo;Hyjnesha&rdquo; &mdash; Graz, Austria</p>
+      </div>
+      <div class="quote-slide">
+        <p class="quote-text">
+          <span data-lang="de">&bdquo;Jede Probe verbindet Generationen, jede B&uuml;hne erz&auml;hlt ein St&uuml;ck unserer Herkunft.&ldquo;</span>
+          <span data-lang="al">&ldquo;&Ccedil;do prov&euml; bashkon breza, &ccedil;do sken&euml; rr&euml;fen nj&euml; cop&euml;z t&euml; prejardhjes son&euml;.&rdquo;</span>
+          <span data-lang="en">&ldquo;Every rehearsal connects generations, every stage tells a piece of our heritage.&rdquo;</span>
+        </p>
+        <p class="quote-attr">AKV &ldquo;Hyjnesha&rdquo; &mdash; Graz, Austria</p>
+      </div>
+      <div class="quote-slide">
+        <p class="quote-text">
+          <span data-lang="de">&bdquo;Wenn wir tanzen, tragen wir Erinnerung, Stolz und Gemeinschaft gemeinsam nach au&szlig;en.&ldquo;</span>
+          <span data-lang="al">&ldquo;Kur vall&euml;zojm&euml;, s&euml; bashku bartim kujtes&euml;n, krenarin&euml; dhe komunitetin ton&euml; p&euml;rpara bot&euml;s.&rdquo;</span>
+          <span data-lang="en">&ldquo;When we dance, we carry memory, pride and community out into the world together.&rdquo;</span>
+        </p>
+        <p class="quote-attr">AKV &ldquo;Hyjnesha&rdquo; &mdash; Graz, Austria</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ============================
@@ -1349,9 +1489,9 @@
         </div>
         <div class="event-info">
           <div class="title">
-            <span data-lang="de" class="inline">Auftritt Sizilien &ndash; Tag 2</span>
-            <span data-lang="al" class="inline">Paraqitje Siqeli &ndash; Dita 2</span>
-            <span data-lang="en" class="inline">Sicily Performance &ndash; Day 2</span>
+            <span data-lang="de" class="inline">Osterparade Piana degli Albanesi &ndash; Tag 2</span>
+            <span data-lang="al" class="inline">Hora Arb&euml;resh&euml;ve</span>
+            <span data-lang="en" class="inline">Easter Parade Piana degli Albanesi &ndash; Day 2</span>
           </div>
           <div class="location">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1673,6 +1813,25 @@
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
+  /* --- Quote slider --- */
+  const quoteSlider = document.getElementById('quoteSlider');
+  if (quoteSlider) {
+    const quoteSlides = quoteSlider.querySelectorAll('.quote-slide');
+    const quoteDots = quoteSlider.querySelectorAll('.quote-dot');
+    let activeQuote = 0;
+
+    function setActiveQuote(index) {
+      quoteSlides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+      quoteDots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+      activeQuote = index;
+    }
+
+    setInterval(() => {
+      const nextQuote = (activeQuote + 1) % quoteSlides.length;
+      setActiveQuote(nextQuote);
+    }, 5000);
+  }
+
   /* --- Contact form (mailto fallback) --- */
   function handleSubmit(e) {
     e.preventDefault();
@@ -1685,5 +1844,7 @@
 </script>
 </body>
 </html>
+
+
 
 
