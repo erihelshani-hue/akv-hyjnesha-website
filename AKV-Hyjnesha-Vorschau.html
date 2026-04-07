@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>AKV "Hyjnesha" – Graz, Austria</title>
   <meta name="description" content="Das einzige albanische Tanzensemble in Österreich. Traditionelle albanische Tänze aus Graz." />
@@ -867,6 +868,129 @@
 
     /* Fallback: if no class set, show de */
     body:not(.lang-de):not(.lang-al):not(.lang-en) [data-lang="de"] { display: block; }
+
+    /* ============================
+       ALBANIAN EAGLE BACKGROUND
+    ============================ */
+    .hero-eagle-bg {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .hero-eagle-bg svg {
+      width: min(72vw, 620px);
+      height: auto;
+      color: white;
+      opacity: 0.07;
+      filter: drop-shadow(0 0 60px rgba(200,16,46,0.18));
+      animation: eagleFade 2s 0.3s ease both;
+    }
+    @keyframes eagleFade { from{opacity:0;transform:scale(0.92)} to{opacity:0.07;transform:scale(1)} }
+
+    /* Hero content must sit above eagle */
+    .hero-content { z-index: 3; }
+    .hero-scroll { z-index: 3; }
+    .hero-overlay { z-index: 2; }
+
+    /* Red top sovereignty stripe */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--red) 20%, var(--red) 80%, transparent 100%);
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    /* Subtle red glow at hero bottom */
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 220px;
+      background: linear-gradient(to top, rgba(200,16,46,0.10), transparent);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Section eagle watermarks */
+    #about, #gallery, #events, #contact { position: relative; overflow: hidden; }
+    .section-eagle-mark {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.03;
+      color: white;
+    }
+    .section-eagle-mark svg { width: 360px; height: auto; }
+    .section-inner { position: relative; z-index: 1; }
+
+    /* Footer eagle SVG */
+    .footer-eagle-svg {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+    .footer-eagle-svg svg {
+      width: 56px;
+      height: auto;
+      color: white;
+      opacity: 0.18;
+    }
+
+    /* Enhanced red accents */
+    .section-tag {
+      text-shadow: 0 0 20px rgba(200,16,46,0.4);
+    }
+    .stat .num {
+      text-shadow: 0 0 30px rgba(200,16,46,0.3);
+    }
+    .hero-tagline {
+      text-shadow: 0 0 25px rgba(200,16,46,0.5);
+    }
+    /* Enhanced about image border glow */
+    .about-img-wrap:hover::before {
+      opacity: 0.7;
+      box-shadow: 0 0 40px rgba(200,16,46,0.12);
+    }
+    /* Richer nav border */
+    nav {
+      border-bottom-color: rgba(200,16,46,0.35);
+      box-shadow: 0 2px 30px rgba(0,0,0,0.5);
+    }
+    /* Quote section eagle overlay */
+    #quote { position: relative; overflow: hidden; }
+    #quote::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    /* Gallery hover glow */
+    .gallery-item:hover img {
+      box-shadow: 0 0 30px rgba(200,16,46,0.25);
+    }
+    /* Event item hover */
+    .event-item:hover {
+      padding-left: 1rem;
+      transition: padding 0.3s;
+    }
+    /* Enhanced hero logo glow */
+    .hero-logo {
+      filter: drop-shadow(0 0 40px rgba(200,16,46,0.5));
+    }
+    /* Subtle section transition lines */
+    section + section {
+      border-top: 1px solid rgba(200,16,46,0.08);
+    }
   </style>
 </head>
 
@@ -910,6 +1034,30 @@
 <section id="hero">
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-overlay"></div>
+  <!-- Albanian double-headed eagle watermark -->
+  <div class="hero-eagle-bg" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 225" fill="currentColor">
+      <!-- Albanian Double-Headed Eagle Silhouette -->
+      <!-- Left wing -->
+      <path d="M 68 112 C 52 104 34 92 12 80 C 18 94 28 106 42 114 C 28 116 16 110 10 102 C 12 120 26 136 46 140 L 58 130 L 64 142 L 72 130 Z"/>
+      <!-- Right wing -->
+      <path d="M 132 112 C 148 104 166 92 188 80 C 182 94 172 106 158 114 C 172 116 184 110 190 102 C 188 120 174 136 154 140 L 142 130 L 136 142 L 128 130 Z"/>
+      <!-- Body / torso -->
+      <path d="M 72 130 C 82 144 92 150 100 150 C 108 150 118 144 128 130 L 126 162 C 120 174 112 180 100 180 C 88 180 80 174 74 162 Z"/>
+      <!-- Left neck + head -->
+      <path d="M 80 88 C 74 76 68 64 64 52 C 60 38 60 24 68 16 C 74 10 82 10 88 16 C 92 8 100 6 106 12 C 112 18 110 30 104 36 C 110 32 118 32 120 38 C 122 44 116 52 110 54 C 116 58 120 66 116 72 C 112 78 104 80 98 76 C 100 84 100 92 98 100 Z"/>
+      <!-- Left beak -->
+      <path d="M 68 16 L 52 22 L 56 32 L 70 26 Z"/>
+      <!-- Right neck + head (mirrored) -->
+      <path d="M 120 88 C 126 76 132 64 136 52 C 140 38 140 24 132 16 C 126 10 118 10 112 16 C 108 8 100 6 94 12 C 88 18 90 30 96 36 C 90 32 82 32 80 38 C 78 44 84 52 90 54 C 84 58 80 66 84 72 C 88 78 96 80 102 76 C 100 84 100 92 102 100 Z"/>
+      <!-- Right beak -->
+      <path d="M 132 16 L 148 22 L 144 32 L 130 26 Z"/>
+      <!-- Left leg + talons -->
+      <path d="M 86 180 L 80 204 L 70 214 L 78 212 L 72 226 L 82 216 L 84 228 L 90 218 L 96 228 L 98 214 L 100 220 L 100 204 Z"/>
+      <!-- Right leg + talons -->
+      <path d="M 114 180 L 120 204 L 130 214 L 122 212 L 128 226 L 118 216 L 116 228 L 110 218 L 104 228 L 102 214 L 100 220 L 100 204 Z"/>
+    </svg>
+  </div>
   <div class="hero-content">
     <img class="hero-logo" src="images/Logo/470894537_17891580084134476_2369760557983885793_n.jpg" alt="AKV Hyjnesha Logo" />
     <p class="hero-tagline">
@@ -942,6 +1090,9 @@
      ABOUT
 ============================ -->
 <section id="about">
+  <div class="section-eagle-mark" style="right:-100px;bottom:-80px;" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 225" fill="currentColor"><path d="M 68 112 C 52 104 34 92 12 80 C 18 94 28 106 42 114 C 28 116 16 110 10 102 C 12 120 26 136 46 140 L 58 130 L 64 142 L 72 130 Z"/><path d="M 132 112 C 148 104 166 92 188 80 C 182 94 172 106 158 114 C 172 116 184 110 190 102 C 188 120 174 136 154 140 L 142 130 L 136 142 L 128 130 Z"/><path d="M 72 130 C 82 144 92 150 100 150 C 108 150 118 144 128 130 L 126 162 C 120 174 112 180 100 180 C 88 180 80 174 74 162 Z"/><path d="M 80 88 C 74 76 68 64 64 52 C 60 38 60 24 68 16 C 74 10 82 10 88 16 C 92 8 100 6 106 12 C 112 18 110 30 104 36 C 110 32 118 32 120 38 C 122 44 116 52 110 54 C 116 58 120 66 116 72 C 112 78 104 80 98 76 C 100 84 100 92 98 100 Z"/><path d="M 68 16 L 52 22 L 56 32 L 70 26 Z"/><path d="M 120 88 C 126 76 132 64 136 52 C 140 38 140 24 132 16 C 126 10 118 10 112 16 C 108 8 100 6 94 12 C 88 18 90 30 96 36 C 90 32 82 32 80 38 C 78 44 84 52 90 54 C 84 58 80 66 84 72 C 88 78 96 80 102 76 C 100 84 100 92 102 100 Z"/><path d="M 132 16 L 148 22 L 144 32 L 130 26 Z"/><path d="M 86 180 L 80 204 L 70 214 L 78 212 L 72 226 L 82 216 L 84 228 L 90 218 L 96 228 L 98 214 L 100 220 L 100 204 Z"/><path d="M 114 180 L 120 204 L 130 214 L 122 212 L 128 226 L 118 216 L 116 228 L 110 218 L 104 228 L 102 214 L 100 220 L 100 204 Z"/></svg>
+  </div>
   <div class="section-inner">
     <div class="about-grid">
       <!-- Image side -->
@@ -1129,7 +1280,19 @@
      QUOTE
 ============================ -->
 <section id="quote">
-  <div class="eagle-divider">&#9679; &#9679; &#9679;</div>
+  <div class="eagle-divider" aria-hidden="true" style="display:flex;justify-content:center;margin-bottom:1.5rem;opacity:0.5;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 225" fill="currentColor" style="width:50px;height:auto;color:white;">
+      <path d="M 68 112 C 52 104 34 92 12 80 C 18 94 28 106 42 114 C 28 116 16 110 10 102 C 12 120 26 136 46 140 L 58 130 L 64 142 L 72 130 Z"/>
+      <path d="M 132 112 C 148 104 166 92 188 80 C 182 94 172 106 158 114 C 172 116 184 110 190 102 C 188 120 174 136 154 140 L 142 130 L 136 142 L 128 130 Z"/>
+      <path d="M 72 130 C 82 144 92 150 100 150 C 108 150 118 144 128 130 L 126 162 C 120 174 112 180 100 180 C 88 180 80 174 74 162 Z"/>
+      <path d="M 80 88 C 74 76 68 64 64 52 C 60 38 60 24 68 16 C 74 10 82 10 88 16 C 92 8 100 6 106 12 C 112 18 110 30 104 36 C 110 32 118 32 120 38 C 122 44 116 52 110 54 C 116 58 120 66 116 72 C 112 78 104 80 98 76 C 100 84 100 92 98 100 Z"/>
+      <path d="M 68 16 L 52 22 L 56 32 L 70 26 Z"/>
+      <path d="M 120 88 C 126 76 132 64 136 52 C 140 38 140 24 132 16 C 126 10 118 10 112 16 C 108 8 100 6 94 12 C 88 18 90 30 96 36 C 90 32 82 32 80 38 C 78 44 84 52 90 54 C 84 58 80 66 84 72 C 88 78 96 80 102 76 C 100 84 100 92 102 100 Z"/>
+      <path d="M 132 16 L 148 22 L 144 32 L 130 26 Z"/>
+      <path d="M 86 180 L 80 204 L 70 214 L 78 212 L 72 226 L 82 216 L 84 228 L 90 218 L 96 228 L 98 214 L 100 220 L 100 204 Z"/>
+      <path d="M 114 180 L 120 204 L 130 214 L 122 212 L 128 226 L 118 216 L 116 228 L 110 218 L 104 228 L 102 214 L 100 220 L 100 204 Z"/>
+    </svg>
+  </div>
   <p class="quote-text">
     <span data-lang="de">&bdquo;Traditionelle Tänze, die mit eigener Seele tanzen &ndash; das ist der Geist von Hyjnesha.&ldquo;</span>
     <span data-lang="al">&ldquo;Valle tradicionale që kërcejnë me shpirt të vet &ndash; ky është shpirti i Hyjneshës.&rdquo;</span>
@@ -1142,6 +1305,9 @@
      EVENTS
 ============================ -->
 <section id="events">
+  <div class="section-eagle-mark" style="left:-80px;top:-60px;" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 225" fill="currentColor"><path d="M 68 112 C 52 104 34 92 12 80 C 18 94 28 106 42 114 C 28 116 16 110 10 102 C 12 120 26 136 46 140 L 58 130 L 64 142 L 72 130 Z"/><path d="M 132 112 C 148 104 166 92 188 80 C 182 94 172 106 158 114 C 172 116 184 110 190 102 C 188 120 174 136 154 140 L 142 130 L 136 142 L 128 130 Z"/><path d="M 72 130 C 82 144 92 150 100 150 C 108 150 118 144 128 130 L 126 162 C 120 174 112 180 100 180 C 88 180 80 174 74 162 Z"/><path d="M 80 88 C 74 76 68 64 64 52 C 60 38 60 24 68 16 C 74 10 82 10 88 16 C 92 8 100 6 106 12 C 112 18 110 30 104 36 C 110 32 118 32 120 38 C 122 44 116 52 110 54 C 116 58 120 66 116 72 C 112 78 104 80 98 76 C 100 84 100 92 98 100 Z"/><path d="M 68 16 L 52 22 L 56 32 L 70 26 Z"/><path d="M 120 88 C 126 76 132 64 136 52 C 140 38 140 24 132 16 C 126 10 118 10 112 16 C 108 8 100 6 94 12 C 88 18 90 30 96 36 C 90 32 82 32 80 38 C 78 44 84 52 90 54 C 84 58 80 66 84 72 C 88 78 96 80 102 76 C 100 84 100 92 102 100 Z"/><path d="M 132 16 L 148 22 L 144 32 L 130 26 Z"/><path d="M 86 180 L 80 204 L 70 214 L 78 212 L 72 226 L 82 216 L 84 228 L 90 218 L 96 228 L 98 214 L 100 220 L 100 204 Z"/><path d="M 114 180 L 120 204 L 130 214 L 122 212 L 128 226 L 118 216 L 116 228 L 110 218 L 104 228 L 102 214 L 100 220 L 100 204 Z"/></svg>
+  </div>
   <div class="section-inner">
     <div class="section-header reveal">
       <div class="section-tag">
@@ -1455,7 +1621,9 @@
      FOOTER
 ============================ -->
 <footer>
-  <div class="footer-eagle">&#9679; &#9679; &#9679;</div>
+  <div class="footer-eagle-svg" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 225" fill="currentColor"><path d="M 68 112 C 52 104 34 92 12 80 C 18 94 28 106 42 114 C 28 116 16 110 10 102 C 12 120 26 136 46 140 L 58 130 L 64 142 L 72 130 Z"/><path d="M 132 112 C 148 104 166 92 188 80 C 182 94 172 106 158 114 C 172 116 184 110 190 102 C 188 120 174 136 154 140 L 142 130 L 136 142 L 128 130 Z"/><path d="M 72 130 C 82 144 92 150 100 150 C 108 150 118 144 128 130 L 126 162 C 120 174 112 180 100 180 C 88 180 80 174 74 162 Z"/><path d="M 80 88 C 74 76 68 64 64 52 C 60 38 60 24 68 16 C 74 10 82 10 88 16 C 92 8 100 6 106 12 C 112 18 110 30 104 36 C 110 32 118 32 120 38 C 122 44 116 52 110 54 C 116 58 120 66 116 72 C 112 78 104 80 98 76 C 100 84 100 92 98 100 Z"/><path d="M 68 16 L 52 22 L 56 32 L 70 26 Z"/><path d="M 120 88 C 126 76 132 64 136 52 C 140 38 140 24 132 16 C 126 10 118 10 112 16 C 108 8 100 6 94 12 C 88 18 90 30 96 36 C 90 32 82 32 80 38 C 78 44 84 52 90 54 C 84 58 80 66 84 72 C 88 78 96 80 102 76 C 100 84 100 92 102 100 Z"/><path d="M 132 16 L 148 22 L 144 32 L 130 26 Z"/><path d="M 86 180 L 80 204 L 70 214 L 78 212 L 72 226 L 82 216 L 84 228 L 90 218 L 96 228 L 98 214 L 100 220 L 100 204 Z"/><path d="M 114 180 L 120 204 L 130 214 L 122 212 L 128 226 L 118 216 L 116 228 L 110 218 L 104 228 L 102 214 L 100 220 L 100 204 Z"/></svg>
+  </div>
   <div class="footer-logo">AKV <span>"Hyjnesha"</span></div>
   <div class="footer-sub">Graz &bull; Austria &bull; Est. 2022</div>
   <ul class="footer-links">
