@@ -1147,6 +1147,11 @@
     body.lang-de [data-lang="de"].flex,
     body.lang-al [data-lang="al"].flex,
     body.lang-en [data-lang="en"].flex { display: flex; }
+    /* Nav links: override mobile display:block rule so only active language shows */
+    .nav-links [data-lang] { display: none; }
+    body.lang-de .nav-links [data-lang="de"],
+    body.lang-al .nav-links [data-lang="al"],
+    body.lang-en .nav-links [data-lang="en"] { display: block; }
 
     /* Fallback: if no class set, show de */
     body:not(.lang-de):not(.lang-al):not(.lang-en) [data-lang="de"] { display: block; }
