@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>AKV "Hyjnesha" – Graz, Austria</title>
-  <meta name="description" content="Das einzige albanische Tanzensemble in Österreich. Traditionelle albanische Tänze aus Graz." />
+  <title>AKV "Hyjnesha" &ndash; Graz, Austria</title>
+  <meta name="description" content="Das einzige albanische Tanzensemble in &Ouml;sterreich. Traditionelle albanische T&auml;nze aus Graz." />
   <!-- Fonts: loads from Google if online, falls back to system fonts offline -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -433,6 +433,35 @@
       font-family: var(--font-serif);
       font-size: 1.1rem;
       color: var(--white);
+    }
+    .about-bios {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .bio-card {
+      padding: 1.25rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(200,16,46,0.18);
+    }
+    .bio-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+      color: var(--white);
+    }
+    .bio-card .bio-role {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.85rem;
+    }
+    .bio-card p {
+      margin-bottom: 0;
+      font-size: 0.88rem;
     }
 
     /* ============================
@@ -876,7 +905,7 @@
      LIGHTBOX
 ============================ -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-close" onclick="closeLightbox()">âœ•</button>
   <img id="lightbox-img" src="" alt="" />
 </div>
 
@@ -889,7 +918,7 @@
     <div class="nav-logo-text">AKV <span>"Hyjnesha"</span></div>
   </div>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#about" data-lang="de" onclick="closeMenu()">Über uns</a><a href="#about" data-lang="al" onclick="closeMenu()">Rreth nesh</a><a href="#about" data-lang="en" onclick="closeMenu()">About</a></li>
+    <li><a href="#about" data-lang="de" onclick="closeMenu()">Ãœber uns</a><a href="#about" data-lang="al" onclick="closeMenu()">Rreth nesh</a><a href="#about" data-lang="en" onclick="closeMenu()">About</a></li>
     <li><a href="#gallery" data-lang="de" onclick="closeMenu()">Galerie</a><a href="#gallery" data-lang="al" onclick="closeMenu()">Galeria</a><a href="#gallery" data-lang="en" onclick="closeMenu()">Gallery</a></li>
     <li><a href="#events" data-lang="de" onclick="closeMenu()">Auftritte</a><a href="#events" data-lang="al" onclick="closeMenu()">Ngjarjet</a><a href="#events" data-lang="en" onclick="closeMenu()">Events</a></li>
     <li><a href="#contact" data-lang="de" onclick="closeMenu()">Kontakt</a><a href="#contact" data-lang="al" onclick="closeMenu()">Kontakt</a><a href="#contact" data-lang="en" onclick="closeMenu()">Contact</a></li>
@@ -913,8 +942,8 @@
   <div class="hero-content">
     <img class="hero-logo" src="images/Logo/470894537_17891580084134476_2369760557983885793_n.jpg" alt="AKV Hyjnesha Logo" />
     <p class="hero-tagline">
-      <span data-lang="de">Das albanische Kulturensemble in Österreich</span>
-      <span data-lang="al">Ansambli shqiptar kulturor në Austri</span>
+      <span data-lang="de">Das albanische Kulturensemble in Ã–sterreich</span>
+      <span data-lang="al">Ansambli shqiptar kulturor nÃ« Austri</span>
       <span data-lang="en">The Albanian Cultural Ensemble in Austria</span>
     </p>
     <h1 class="hero-title">
@@ -928,7 +957,7 @@
     </div>
     <a href="#about" class="hero-cta">
       <span data-lang="de">Mehr erfahren</span>
-      <span data-lang="al">Mëso më shumë</span>
+      <span data-lang="al">MÃ«so mÃ« shumÃ«</span>
       <span data-lang="en">Discover More</span>
     </a>
   </div>
@@ -946,12 +975,12 @@
     <div class="about-grid">
       <!-- Image side -->
       <div class="about-img-wrap reveal">
-        <img src="images/about.jpg" alt="AKV Hyjnesha – Probe"
+        <img src="images/481415215_17899205943134476_3616378244887124695_n.jpg" alt="AKV Hyjnesha &ndash; Probe"
              onerror="this.style.background='#1a1a1a';this.style.minHeight='500px'" />
         <div class="about-badge">
           <div class="num">2022</div>
           <div class="lbl">
-            <span data-lang="de">Gegründet</span>
+            <span data-lang="de">Gegr&uuml;ndet</span>
             <span data-lang="al">Themeluar</span>
             <span data-lang="en">Founded</span>
           </div>
@@ -961,7 +990,7 @@
       <div class="about-text reveal">
         <div class="section-header">
           <div class="section-tag">
-            <span data-lang="de">Über uns</span>
+            <span data-lang="de">&Uuml;ber uns</span>
             <span data-lang="al">Rreth nesh</span>
             <span data-lang="en">About us</span>
           </div>
@@ -975,46 +1004,46 @@
 
         <!-- DE -->
         <div data-lang="de">
-          <p>AKV &ldquo;Hyjnesha&rdquo; ist das <strong>einzige albanische Tanzensemble in Österreich</strong> und wurde 2022 in Graz gegründet. Mit rund 20 Mitgliedern trägt das Ensemble die reiche Tradition der albanischen Volkskultur in die Herzen des österreichischen Publikums.</p>
-          <p>Was &ldquo;Hyjnesha&rdquo; besonders macht: Unsere Choreografien gehen weit über das bloße Bewahren von Überlieferungen hinaus. Jeder Tanz erhält einen eigenen künstlerischen Atem &ndash; zeitgemäß, ausdrucksstark &ndash; ohne dass der ursprüngliche Charakter der albanischen Folklore verloren geht.</p>
-          <p>Der Name <em>Hyjnesha</em> (dt. &bdquo;Die Göttin&ldquo;) steht für Anmut, Würde und die ungebrochene Kraft einer jahrtausendealten Kultur &ndash; verkörpert durch das Symbol der <em>Hyjnesha e Prishtinës</em>, der ikonischen neolithischen Figur Kosovos.</p>
+          <p>AKV &ldquo;Hyjnesha&rdquo; ist das <strong>einzige albanische Tanzensemble in &Ouml;sterreich</strong> und wurde 2022 in Graz gegr&uuml;ndet. Mit insgesamt rund 60 Mitgliedern und &uuml;ber 20 T&auml;nzerinnen und T&auml;nzern tr&auml;gt das Ensemble die reiche Tradition der albanischen Volkskultur in die Herzen des &ouml;sterreichischen Publikums.</p>
+          <p>Was &ldquo;Hyjnesha&rdquo; besonders macht: Unsere Choreografien gehen weit &uuml;ber das blo&szlig;e Bewahren von &Uuml;berlieferungen hinaus. Jeder Tanz erh&auml;lt einen eigenen k&uuml;nstlerischen Atem &ndash; zeitgem&auml;&szlig;, ausdrucksstark &ndash; ohne dass der urspr&uuml;ngliche Charakter der albanischen Folklore verloren geht.</p>
+          <p>Der Name <em>Hyjnesha</em> (dt. &bdquo;Die G&ouml;ttin&ldquo;) steht f&uuml;r Anmut, W&uuml;rde und die ungebrochene Kraft einer jahrtausendealten Kultur &ndash; verk&ouml;rpert durch das Symbol der <em>Hyjnesha e Prishtin&euml;s</em>, der ikonischen neolithischen Figur Kosovos.</p>
         </div>
         <!-- AL -->
         <div data-lang="al">
-          <p>AKV &ldquo;Hyjnesha&rdquo; është <strong>ansambli i vetëm shqiptar i vallëzimit në Austri</strong>, i themeluar në vitin 2022 në Graz. Me rreth 20 anëtarë, ansambli mbart traditën e pasur të kulturës popullore shqiptare në zemrat e audiencës austriake.</p>
-          <p>Ajo që e bën &ldquo;Hyjnesha&rdquo; të veçantë: Koreografitë tona shkojnë shumë përtej ruajtjes së thjeshtë të traditës. Çdo valle merr frymë artistike të veçantë &ndash; bashkëkohore, shprehëse &ndash; pa humbur karakterin origjinal të folklorit shqiptar.</p>
-          <p>Emri <em>Hyjnesha</em> simbolizon hirin, dinjitetin dhe fuqinë e pashuar të një kulture mijëvjeçare &ndash; e mishëruar nga figura e <em>Hyjneshës së Prishtinës</em>, ikonës neolitike të Kosovës.</p>
+          <p>AKV &ldquo;Hyjnesha&rdquo; &euml;sht&euml; <strong>ansambli i vet&euml;m shqiptar i vall&euml;zimit n&euml; Austri</strong>, i themeluar n&euml; vitin 2022 n&euml; Graz. Me gjithsej rreth 60 an&euml;tar&euml; dhe mbi 20 valltar&euml;, ansambli mbart tradit&euml;n e pasur t&euml; kultur&euml;s popullore shqiptare n&euml; zemrat e audienc&euml;s austriake.</p>
+          <p>Ajo q&euml; e b&euml;n &ldquo;Hyjnesha&rdquo; t&euml; ve&ccedil;ant&euml;: Koreografit&euml; tona shkojn&euml; shum&euml; p&euml;rtej ruajtjes s&euml; thjesht&euml; t&euml; tradit&euml;s. &Ccedil;do valle merr frym&euml; artistike t&euml; ve&ccedil;ant&euml; &ndash; bashk&euml;kohore, shpreh&euml;se &ndash; pa humbur karakterin origjinal t&euml; folklorit shqiptar.</p>
+          <p>Emri <em>Hyjnesha</em> simbolizon hirin, dinjitetin dhe fuqin&euml; e pashuar t&euml; nj&euml; kulture mij&euml;vje&ccedil;are &ndash; e mish&euml;ruar nga figura e <em>Hyjnesh&euml;s s&euml; Prishtin&euml;s</em>, ikon&euml;s neolitike t&euml; Kosov&euml;s.</p>
         </div>
         <!-- EN -->
         <div data-lang="en">
-          <p>AKV &ldquo;Hyjnesha&rdquo; is the <strong>only Albanian dance ensemble in Austria</strong>, founded in Graz in 2022. With around 20 members, the ensemble carries the rich tradition of Albanian folk culture to the hearts of Austrian audiences.</p>
+          <p>AKV &ldquo;Hyjnesha&rdquo; is the <strong>only Albanian dance ensemble in Austria</strong>, founded in Graz in 2022. With around 60 members in total and more than 20 dancers, the ensemble carries the rich tradition of Albanian folk culture to the hearts of Austrian audiences.</p>
           <p>What makes &ldquo;Hyjnesha&rdquo; special: Our choreographies go far beyond mere preservation of tradition. Each dance receives its own artistic breath &ndash; contemporary, expressive &ndash; without losing the original character of Albanian folklore.</p>
-          <p>The name <em>Hyjnesha</em> (meaning &ldquo;The Goddess&rdquo;) stands for grace, dignity and the unbroken strength of a millennia-old culture &ndash; embodied by the symbol of <em>Hyjnesha e Prishtinës</em>, the iconic Neolithic figurine of Kosovo.</p>
+          <p>The name <em>Hyjnesha</em> (meaning &ldquo;The Goddess&rdquo;) stands for grace, dignity and the unbroken strength of a millennia-old culture &ndash; embodied by the symbol of <em>Hyjnesha e Prishtin&euml;s</em>, the iconic Neolithic figurine of Kosovo.</p>
         </div>
 
         <div class="about-stats">
           <div class="stat">
-            <div class="num">20</div>
+            <div class="num">60</div>
             <div class="lbl">
               <span data-lang="de" class="inline">Mitglieder</span>
-              <span data-lang="al" class="inline">Anëtarë</span>
+              <span data-lang="al" class="inline">An&euml;tar&euml;</span>
               <span data-lang="en" class="inline">Members</span>
             </div>
           </div>
           <div class="stat">
             <div class="num">#1</div>
             <div class="lbl">
-              <span data-lang="de" class="inline">In Österreich</span>
-              <span data-lang="al" class="inline">Në Austri</span>
+              <span data-lang="de" class="inline">In &Ouml;sterreich</span>
+              <span data-lang="al" class="inline">N&euml; Austri</span>
               <span data-lang="en" class="inline">In Austria</span>
             </div>
           </div>
           <div class="stat">
-            <div class="num">3+</div>
+            <div class="num">20+</div>
             <div class="lbl">
-              <span data-lang="de" class="inline">Länder</span>
-              <span data-lang="al" class="inline">Shtete</span>
-              <span data-lang="en" class="inline">Countries</span>
+              <span data-lang="de" class="inline">T&auml;nzer:innen</span>
+              <span data-lang="al" class="inline">Valltar&euml;</span>
+              <span data-lang="en" class="inline">Dancers</span>
             </div>
           </div>
         </div>
@@ -1024,11 +1053,11 @@
             <div class="team-dot"></div>
             <div>
               <div class="role">
-                <span data-lang="de" class="inline">Künstlerische Leitung</span>
-                <span data-lang="al" class="inline">Drejtoria Artistike</span>
-                <span data-lang="en" class="inline">Artistic Direction</span>
+                <span data-lang="de" class="inline">Gr&uuml;nderin &amp; K&uuml;nstlerische Leitung</span>
+                <span data-lang="al" class="inline">Themeluese &amp; Drejtore Artistike</span>
+                <span data-lang="en" class="inline">Founder &amp; Artistic Director</span>
               </div>
-              <div class="name">Xhejlane Raça</div>
+              <div class="name">Xheylane Ra&ccedil;a</div>
             </div>
           </div>
           <div class="team-member">
@@ -1041,6 +1070,35 @@
               </div>
               <div class="name">Dilaver Kryeziu</div>
             </div>
+          </div>
+        </div>
+
+        <div class="about-bios">
+          <div class="bio-card">
+            <h3>Xheylane Ra&ccedil;a</h3>
+            <div class="bio-role">
+              <span data-lang="de" class="inline">Kurze Biografie</span>
+              <span data-lang="al" class="inline">Biografi e shkurt&euml;r</span>
+              <span data-lang="en" class="inline">Short biography</span>
+            </div>
+            <p>
+              <span data-lang="de">Platzhalter: Hier kommt eine kurze Biografie &uuml;ber Xheylane Ra&ccedil;a als Gr&uuml;nderin und k&uuml;nstlerische Leiterin des Ensembles hin.</span>
+              <span data-lang="al">Mbajt&euml;s vendi: K&euml;tu do t&euml; vij&euml; nj&euml; biografi e shkurt&euml;r p&euml;r Xheylane Ra&ccedil;a si themeluese dhe drejtoresh&euml; artistike e ansamblit.</span>
+              <span data-lang="en">Placeholder: A short biography of Xheylane Ra&ccedil;a as founder and artistic director of the ensemble will be added here.</span>
+            </p>
+          </div>
+          <div class="bio-card">
+            <h3>Dilaver Kryeziu</h3>
+            <div class="bio-role">
+              <span data-lang="de" class="inline">Kurze Biografie</span>
+              <span data-lang="al" class="inline">Biografi e shkurt&euml;r</span>
+              <span data-lang="en" class="inline">Short biography</span>
+            </div>
+            <p>
+              <span data-lang="de">Platzhalter: Hier kommt eine kurze Biografie &uuml;ber Dilaver Kryeziu und seine Rolle im Ensemble hin.</span>
+              <span data-lang="al">Mbajt&euml;s vendi: K&euml;tu do t&euml; vij&euml; nj&euml; biografi e shkurt&euml;r p&euml;r Dilaver Kryeziu dhe rolin e tij n&euml; ansamb&euml;l.</span>
+              <span data-lang="en">Placeholder: A short biography of Dilaver Kryeziu and his role in the ensemble will be added here.</span>
+            </p>
           </div>
         </div>
       </div>
@@ -1061,14 +1119,14 @@
       </div>
       <h2 class="section-title">
         <span data-lang="de">Momente der <em>Leidenschaft</em></span>
-        <span data-lang="al">Momente të <em>pasionit</em></span>
+        <span data-lang="al">Momente tÃ« <em>pasionit</em></span>
         <span data-lang="en">Moments of <em>Passion</em></span>
       </h2>
       <div class="section-line"><span></span><div class="dot"></div><span></span></div>
     </div>
     <div class="gallery-grid reveal">
-      <div class="gallery-item tall" onclick="openLightbox('images/gallery1.jpg')">
-        <img src="images/gallery1.jpg" alt="AKV Hyjnesha Auftritt"
+      <div class="gallery-item tall" onclick="openLightbox('images/503130274_2441713216228141_4788792338802661455_n.jpg')">
+        <img src="images/503130274_2441713216228141_4788792338802661455_n.jpg" alt="AKV Hyjnesha PortrÃ¤tcollage"
              onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22600%22><rect fill=%22%231a1a1a%22 width=%22400%22 height=%22600%22/><text fill=%22%23555%22 x=%22200%22 y=%22300%22 text-anchor=%22middle%22 font-size=%2216%22>Foto folgt</text></svg>'" />
         <div class="overlay">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
@@ -1076,8 +1134,8 @@
           </svg>
         </div>
       </div>
-      <div class="gallery-item" onclick="openLightbox('images/gallery2.jpg')">
-        <img src="images/gallery2.jpg" alt="AKV Hyjnesha"
+      <div class="gallery-item" onclick="openLightbox('images/475816159_17896408743134476_7011167202050878049_n.jpg')">
+        <img src="images/475816159_17896408743134476_7011167202050878049_n.jpg" alt="AKV Hyjnesha Gruppenfoto"
              onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%231a1a1a%22 width=%22400%22 height=%22300%22/><text fill=%22%23555%22 x=%22200%22 y=%22150%22 text-anchor=%22middle%22 font-size=%2216%22>Foto folgt</text></svg>'" />
         <div class="overlay">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
@@ -1085,8 +1143,8 @@
           </svg>
         </div>
       </div>
-      <div class="gallery-item" onclick="openLightbox('images/gallery3.jpg')">
-        <img src="images/gallery3.jpg" alt="AKV Hyjnesha"
+      <div class="gallery-item" onclick="openLightbox('images/481858095_17899197732134476_2215340768576776508_n.jpg')">
+        <img src="images/481858095_17899197732134476_2215340768576776508_n.jpg" alt="AKV Hyjnesha hinter der BÃ¼hne"
              onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%231a1a1a%22 width=%22400%22 height=%22300%22/><text fill=%22%23555%22 x=%22200%22 y=%22150%22 text-anchor=%22middle%22 font-size=%2216%22>Foto folgt</text></svg>'" />
         <div class="overlay">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
@@ -1094,8 +1152,8 @@
           </svg>
         </div>
       </div>
-      <div class="gallery-item wide" onclick="openLightbox('images/gallery4.jpg')">
-        <img src="images/gallery4.jpg" alt="AKV Hyjnesha – Graz"
+      <div class="gallery-item wide" onclick="openLightbox('images/625352568_18200912335326560_7261226437890655373_n.jpg')">
+        <img src="images/625352568_18200912335326560_7261226437890655373_n.jpg" alt="AKV Hyjnesha Tanzauftritt"
              onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22><rect fill=%22%231a1a1a%22 width=%22800%22 height=%22400%22/><text fill=%22%23555%22 x=%22400%22 y=%22200%22 text-anchor=%22middle%22 font-size=%2216%22>Foto folgt</text></svg>'" />
         <div class="overlay">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
@@ -1103,8 +1161,8 @@
           </svg>
         </div>
       </div>
-      <div class="gallery-item" onclick="openLightbox('images/gallery5.jpg')">
-        <img src="images/gallery5.jpg" alt="AKV Hyjnesha"
+      <div class="gallery-item" onclick="openLightbox('images/572064910_17927156298134476_3327356143411463542_n.jpg')">
+        <img src="images/572064910_17927156298134476_3327356143411463542_n.jpg" alt="AKV Hyjnesha Festivalfoto"
              onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%231a1a1a%22 width=%22400%22 height=%22300%22/><text fill=%22%23555%22 x=%22200%22 y=%22150%22 text-anchor=%22middle%22 font-size=%2216%22>Foto folgt</text></svg>'" />
         <div class="overlay">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
@@ -1112,8 +1170,8 @@
           </svg>
         </div>
       </div>
-      <div class="gallery-item" onclick="openLightbox('images/gallery6.jpg')">
-        <img src="images/gallery6.jpg" alt="AKV Hyjnesha"
+      <div class="gallery-item" onclick="openLightbox('images/490726142_17905161378134476_4407178401816803936_n.jpg')">
+        <img src="images/490726142_17905161378134476_4407178401816803936_n.jpg" alt="AKV Hyjnesha BÃ¼hnenauftritt"
              onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%231a1a1a%22 width=%22400%22 height=%22300%22/><text fill=%22%23555%22 x=%22200%22 y=%22150%22 text-anchor=%22middle%22 font-size=%2216%22>Foto folgt</text></svg>'" />
         <div class="overlay">
           <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
@@ -1131,11 +1189,11 @@
 <section id="quote">
   <div class="eagle-divider">&#9679; &#9679; &#9679;</div>
   <p class="quote-text">
-    <span data-lang="de">&bdquo;Traditionelle Tänze, die mit eigener Seele tanzen &ndash; das ist der Geist von Hyjnesha.&ldquo;</span>
-    <span data-lang="al">&ldquo;Valle tradicionale që kërcejnë me shpirt të vet &ndash; ky është shpirti i Hyjneshës.&rdquo;</span>
+    <span data-lang="de">&bdquo;Traditionelle TÃ¤nze, die mit eigener Seele tanzen &ndash; das ist der Geist von Hyjnesha.&ldquo;</span>
+    <span data-lang="al">&ldquo;Valle tradicionale qÃ« kÃ«rcejnÃ« me shpirt tÃ« vet &ndash; ky Ã«shtÃ« shpirti i HyjneshÃ«s.&rdquo;</span>
     <span data-lang="en">&ldquo;Traditional dances that dance with their own soul &ndash; this is the spirit of Hyjnesha.&rdquo;</span>
   </p>
-  <p class="quote-attr">AKV &ldquo;Hyjnesha&rdquo; — Graz, Austria</p>
+  <p class="quote-attr">AKV &ldquo;Hyjnesha&rdquo; â€” Graz, Austria</p>
 </section>
 
 <!-- ============================
@@ -1160,12 +1218,12 @@
     <div class="events-tabs reveal">
       <button class="tab-btn active" onclick="switchTab('upcoming')">
         <span data-lang="de" class="inline">Kommend</span>
-        <span data-lang="al" class="inline">Të ardhshme</span>
+        <span data-lang="al" class="inline">TÃ« ardhshme</span>
         <span data-lang="en" class="inline">Upcoming</span>
       </button>
       <button class="tab-btn" onclick="switchTab('past')">
         <span data-lang="de" class="inline">Vergangen</span>
-        <span data-lang="al" class="inline">Të kaluara</span>
+        <span data-lang="al" class="inline">TÃ« kaluara</span>
         <span data-lang="en" class="inline">Past</span>
       </button>
     </div>
@@ -1174,7 +1232,7 @@
     <div class="events-list active" id="tab-upcoming">
       <div class="event-item">
         <div class="event-date">
-          <div class="day">—</div>
+          <div class="day">â€”</div>
           <div class="month">
             <span data-lang="de" class="inline">Mai 2026</span>
             <span data-lang="al" class="inline">Maj 2026</span>
@@ -1184,7 +1242,7 @@
         <div class="event-info">
           <div class="title">
             <span data-lang="de" class="inline">Auftritt in Graz</span>
-            <span data-lang="al" class="inline">Paraqitje në Graz</span>
+            <span data-lang="al" class="inline">Paraqitje nÃ« Graz</span>
             <span data-lang="en" class="inline">Performance in Graz</span>
           </div>
           <div class="location">
@@ -1192,7 +1250,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
-            Graz, Österreich
+            Graz, Ã–sterreich
           </div>
         </div>
         <div class="event-tag upcoming">
@@ -1216,9 +1274,9 @@
         </div>
         <div class="event-info">
           <div class="title">
-            <span data-lang="de" class="inline">Piana degli Albanesi – Arbëreshë Kulturabend</span>
-            <span data-lang="al" class="inline">Piana degli Albanesi – Mbrëmje Kulturore Arbëreshe</span>
-            <span data-lang="en" class="inline">Piana degli Albanesi – Arbëreshë Cultural Evening</span>
+            <span data-lang="de" class="inline">Piana degli Albanesi â€“ ArbÃ«reshÃ« Kulturabend</span>
+            <span data-lang="al" class="inline">Piana degli Albanesi â€“ MbrÃ«mje Kulturore ArbÃ«reshe</span>
+            <span data-lang="en" class="inline">Piana degli Albanesi â€“ ArbÃ«reshÃ« Cultural Evening</span>
           </div>
           <div class="location">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1241,9 +1299,9 @@
         </div>
         <div class="event-info">
           <div class="title">
-            <span data-lang="de" class="inline">Auftritt Sizilien – Tag 2</span>
-            <span data-lang="al" class="inline">Paraqitje Siqeli – Dita 2</span>
-            <span data-lang="en" class="inline">Sicily Performance – Day 2</span>
+            <span data-lang="de" class="inline">Auftritt Sizilien â€“ Tag 2</span>
+            <span data-lang="al" class="inline">Paraqitje Siqeli â€“ Dita 2</span>
+            <span data-lang="en" class="inline">Sicily Performance â€“ Day 2</span>
           </div>
           <div class="location">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1257,9 +1315,9 @@
       </div>
       <div class="event-item">
         <div class="event-date">
-          <div class="day">—</div>
+          <div class="day">â€”</div>
           <div class="month">
-            <span data-lang="de" class="inline">Mär 2026</span>
+            <span data-lang="de" class="inline">MÃ¤r 2026</span>
             <span data-lang="al" class="inline">Mar 2026</span>
             <span data-lang="en" class="inline">Mar 2026</span>
           </div>
@@ -1275,20 +1333,20 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
-            Kapfenberg, Österreich
+            Kapfenberg, Ã–sterreich
           </div>
         </div>
         <div class="event-tag past">AT</div>
       </div>
       <div class="event-item">
         <div class="event-date">
-          <div class="day">—</div>
+          <div class="day">â€”</div>
           <div class="month">2025</div>
         </div>
         <div class="event-info">
           <div class="title">
             <span data-lang="de" class="inline">Auftritt Tirana</span>
-            <span data-lang="al" class="inline">Paraqitje Tiranë</span>
+            <span data-lang="al" class="inline">Paraqitje TiranÃ«</span>
             <span data-lang="en" class="inline">Performance Tirana</span>
           </div>
           <div class="location">
@@ -1327,13 +1385,13 @@
     <div class="contact-grid">
       <div class="contact-info reveal">
         <h3>
-          <span data-lang="de">Wir freuen uns von dir zu hören</span>
-          <span data-lang="al">Do të gëzoheshim të dëgjojmë prej teje</span>
+          <span data-lang="de">Wir freuen uns von dir zu hÃ¶ren</span>
+          <span data-lang="al">Do tÃ« gÃ«zoheshim tÃ« dÃ«gjojmÃ« prej teje</span>
           <span data-lang="en">We'd love to hear from you</span>
         </h3>
         <p>
-          <span data-lang="de">Ob für Buchungsanfragen, Kooperationen oder einfach um mehr über unser Ensemble zu erfahren &ndash; kontaktiere uns jederzeit.</span>
-          <span data-lang="al">Qoftë për kërkesa rezervimi, bashkëpunime, apo thjesht për të mësuar më shumë rreth ansamblitit tonë &ndash; kontaktoni ne në çdo kohë.</span>
+          <span data-lang="de">Ob fÃ¼r Buchungsanfragen, Kooperationen oder einfach um mehr Ã¼ber unser Ensemble zu erfahren &ndash; kontaktiere uns jederzeit.</span>
+          <span data-lang="al">QoftÃ« pÃ«r kÃ«rkesa rezervimi, bashkÃ«punime, apo thjesht pÃ«r tÃ« mÃ«suar mÃ« shumÃ« rreth ansamblitit tonÃ« &ndash; kontaktoni ne nÃ« Ã§do kohÃ«.</span>
           <span data-lang="en">Whether for booking inquiries, collaborations or simply to learn more about our ensemble &ndash; contact us anytime.</span>
         </p>
 
@@ -1362,9 +1420,9 @@
               <span data-lang="en" class="inline">Phone</span>
             </div>
             <div class="value" style="color:var(--gray-light)">
-              <span data-lang="de" class="inline">Folgt in Kürze</span>
-              <span data-lang="al" class="inline">Së shpejti</span>
-              <span data-lang="en" class="inline">Coming soon</span>
+              <span data-lang="de" class="inline">Telefonnummer folgt</span>
+              <span data-lang="al" class="inline">Numri i telefonit do t&euml; shtohet s&euml; shpejti</span>
+              <span data-lang="en" class="inline">Phone number will be added soon</span>
             </div>
           </div>
         </div>
@@ -1382,7 +1440,7 @@
               <span data-lang="al" class="inline">Vendndodhja</span>
               <span data-lang="en" class="inline">Location</span>
             </div>
-            <div class="value">Graz, Österreich</div>
+            <div class="value">Graz, &Ouml;sterreich</div>
           </div>
         </div>
 
@@ -1442,7 +1500,7 @@
           </div>
           <button type="submit" class="btn-submit">
             <span data-lang="de" class="inline">Senden</span>
-            <span data-lang="al" class="inline">Dërgo</span>
+            <span data-lang="al" class="inline">DÃ«rgo</span>
             <span data-lang="en" class="inline">Send Message</span>
           </button>
         </form>
@@ -1460,7 +1518,7 @@
   <div class="footer-sub">Graz &bull; Austria &bull; Est. 2022</div>
   <ul class="footer-links">
     <li><a href="#about">
-      <span data-lang="de" class="inline">Über uns</span>
+      <span data-lang="de" class="inline">Ãœber uns</span>
       <span data-lang="al" class="inline">Rreth nesh</span>
       <span data-lang="en" class="inline">About</span>
     </a></li>
@@ -1483,7 +1541,7 @@
   <p class="footer-copy">
     &copy; 2024 AKV &ldquo;Hyjnesha&rdquo; Graz &bull;
     <span data-lang="de" class="inline">Alle Rechte vorbehalten</span>
-    <span data-lang="al" class="inline">Të gjitha të drejtat e rezervuara</span>
+    <span data-lang="al" class="inline">TÃ« gjitha tÃ« drejtat e rezervuara</span>
     <span data-lang="en" class="inline">All rights reserved</span>
     &bull; Design: Erjon Helshani
   </p>
@@ -1577,3 +1635,4 @@
 </script>
 </body>
 </html>
+
