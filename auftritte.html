@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Auftritte &ndash; AKV "Hyjnesha"</title>
+  <meta name="description" content="Vergangene Auftritte des AKV Hyjnesha &ndash; Graz, Austria." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    @font-face { font-family: 'Cormorant Garamond'; src: local('Georgia'), local('Times New Roman'); font-weight: 300 700; }
+    @font-face { font-family: 'Montserrat'; src: local('Arial'), local('Helvetica Neue'), local('Helvetica'); font-weight: 300 600; }
+  </style>
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f5f0;
+      --red: #C8102E;
+      --red-dark: #9a0b22;
+      --gray-dark: #1a1a1a;
+      --gray-mid: #2d2d2d;
+      --gray-light: #888;
+      --panel: rgba(12,12,12,0.78);
+      --panel-strong: rgba(18,18,18,0.92);
+      --line-soft: rgba(255,255,255,0.08);
+      --gold: #c9a84c;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      background: linear-gradient(180deg, #060606 0%, #090909 35%, #050505 100%);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      padding-bottom: 4rem;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ::selection { background: var(--red); color: var(--white); }
+    button, input { -webkit-appearance: none; appearance: none; border-radius: 0; }
+
+    /* ============================
+       NAVIGATION
+    ============================ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      padding-left: max(1.5rem, env(safe-area-inset-left));
+      padding-right: max(1.5rem, env(safe-area-inset-right));
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200,16,46,0.08);
+      transition: padding 0.3s;
+    }
+    nav.scrolled { padding: 0.7rem 1.5rem; }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .logo-shell {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid rgba(200,16,46,0.25);
+      background: linear-gradient(180deg, rgba(26,26,26,0.96), rgba(10,10,10,0.98));
+      box-shadow: inset 0 0 28px rgba(0,0,0,0.48), 0 12px 35px rgba(0,0,0,0.28);
+      width: 52px; height: 52px;
+      border-radius: 50%;
+    }
+    .nav-logo-svg {
+      width: 46px; height: 46px;
+      object-fit: cover;
+      clip-path: circle(48% at 50% 50%);
+      transform: scale(1.08);
+    }
+    .nav-logo-text {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+    }
+    .nav-logo-text span { color: var(--red); }
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+      transition: color 0.3s;
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 0.4rem 0.9rem;
+    }
+    .nav-back:hover { color: var(--white); border-color: rgba(255,255,255,0.25); }
+    .nav-back svg { width: 14px; height: 14px; }
+    .lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .lang-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--gray-light);
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      min-height: 44px;
+    }
+    .lang-btn:hover, .lang-btn.active {
+      background: var(--red);
+      border-color: var(--red);
+      color: var(--white);
+    }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+
+    /* ============================
+       PAGE HEADER
+    ============================ */
+    .page-header {
+      padding-top: 8rem;
+      padding-bottom: 3rem;
+      text-align: center;
+      position: relative;
+    }
+    .page-tag {
+      display: inline-block;
+      font-size: 0.62rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1rem;
+    }
+    .page-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: 0.04em;
+    }
+    .page-title em { font-style: italic; }
+    .page-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    .page-divider span { display: block; height: 1px; width: 50px; background: var(--red); }
+    .page-divider .dot { width: 5px; height: 5px; background: var(--red); border-radius: 50%; }
+
+    /* ============================
+       BLOG LAYOUT
+    ============================ */
+    .blog-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Individual event article */
+    .event-article {
+      margin-bottom: 5rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .event-article.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .article-inner {
+      border: 1px solid rgba(255,255,255,0.06);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)),
+        linear-gradient(145deg, rgba(200,16,46,0.04), transparent 24%),
+        var(--panel);
+      overflow: hidden;
+    }
+
+    /* Hero image at top of article */
+    .article-hero {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      overflow: hidden;
+      background: var(--gray-dark);
+    }
+    .article-hero img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%) brightness(0.85);
+      transition: transform 6s ease, filter 0.4s ease;
+    }
+    .article-hero:hover img { transform: scale(1.03); filter: grayscale(0%) brightness(0.9); }
+    .article-hero-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #141414, #1e1e1e);
+      color: rgba(255,255,255,0.2);
+    }
+    .article-hero-placeholder svg { width: 48px; height: 48px; opacity: 0.3; }
+    .article-hero-placeholder span { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; }
+    .article-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(5,5,5,0.7) 0%, transparent 50%);
+    }
+    .article-hero-badge {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+    }
+
+    /* Article meta / header */
+    .article-meta {
+      padding: 2rem 2.5rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+    .article-date-block {
+      flex-shrink: 0;
+      text-align: center;
+      border: 1px solid rgba(200,16,46,0.3);
+      padding: 0.6rem 1rem;
+      min-width: 70px;
+    }
+    .article-date-block .day {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--red);
+    }
+    .article-date-block .month {
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+      margin-top: 0.2rem;
+    }
+    .article-title-block { flex: 1; }
+    .article-location {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.6rem;
+    }
+    .article-location svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: 0.03em;
+    }
+    .article-title em { font-style: italic; }
+
+    /* Article body text */
+    .article-body {
+      padding: 1.5rem 2.5rem;
+    }
+    .article-body p {
+      font-size: 0.82rem;
+      line-height: 1.9;
+      color: rgba(245,245,240,0.72);
+      margin-bottom: 1rem;
+    }
+    .article-body p:last-child { margin-bottom: 0; }
+
+    /* Image grid */
+    .article-images {
+      padding: 0 2.5rem 2.5rem;
+    }
+    .images-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .img-grid {
+      display: grid;
+      gap: 6px;
+    }
+    .img-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .img-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .img-grid.cols-1 { grid-template-columns: 1fr; }
+    .img-grid .span-2 { grid-column: span 2; }
+
+    .img-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--gray-dark);
+    }
+    .img-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease, filter 0.4s ease;
+      filter: grayscale(15%) brightness(0.82);
+    }
+    .img-item:hover img { transform: scale(1.04); filter: grayscale(0%) brightness(0.9); }
+    .img-item.h-200 { height: 200px; }
+    .img-item.h-280 { height: 280px; }
+    .img-item.h-340 { height: 340px; }
+
+    /* Placeholder for image slots */
+    .img-placeholder-slot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #141414, #1e1e1e);
+      border: 1px dashed rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.18);
+    }
+    .img-placeholder-slot svg { width: 32px; height: 32px; opacity: 0.25; }
+    .img-placeholder-slot span { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.94);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .lightbox.open { opacity: 1; pointer-events: all; }
+    .lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      background: none; border: none;
+      color: var(--white); font-size: 2rem;
+      cursor: pointer; line-height: 1;
+      min-height: 44px; min-width: 44px;
+    }
+
+    /* Divider between articles */
+    .article-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 0 5rem;
+      opacity: 0.3;
+    }
+    .article-divider span { flex: 1; height: 1px; background: rgba(255,255,255,0.15); }
+    .article-divider .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--red); opacity: 1; }
+
+    /* ============================
+       FOOTER STRIP
+    ============================ */
+    .page-footer {
+      text-align: center;
+      padding: 3rem 1.5rem calc(2rem + env(safe-area-inset-bottom));
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin-top: 2rem;
+    }
+    .page-footer-logo {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+    }
+    .page-footer-logo span { color: var(--red); }
+    .page-footer p {
+      font-size: 0.62rem;
+      color: var(--gray-light);
+      letter-spacing: 0.1em;
+    }
+
+    /* ============================
+       MOBILE
+    ============================ */
+    @media (max-width: 700px) {
+      .article-hero { height: 260px; }
+      .article-meta { padding: 1.5rem 1.2rem 0; gap: 1rem; }
+      .article-body { padding: 1.2rem 1.2rem; }
+      .article-images { padding: 0 1.2rem 1.5rem; }
+      .img-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+      .img-grid .span-2 { grid-column: span 1; }
+      .nav-logo-text { display: none; }
+    }
+    @media (max-width: 420px) {
+      .img-grid.cols-3 { grid-template-columns: 1fr; }
+      .img-grid.cols-2 { grid-template-columns: 1fr; }
+      .article-meta { flex-direction: column; gap: 0.8rem; }
+    }
+
+    /* ============================
+       LANGUAGE CLASSES
+    ============================ */
+    [data-lang] { display: none; }
+    body.lang-de [data-lang="de"],
+    body.lang-al [data-lang="al"],
+    body.lang-en [data-lang="en"] { display: block; }
+    body.lang-de [data-lang="de"].inline,
+    body.lang-al [data-lang="al"].inline,
+    body.lang-en [data-lang="en"].inline { display: inline; }
+    body:not(.lang-de):not(.lang-al):not(.lang-en) [data-lang="de"] { display: block; }
+    body:not(.lang-de):not(.lang-al):not(.lang-en) [data-lang="de"].inline { display: inline; }
+  </style>
+</head>
+
+<body class="lang-de">
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<!-- ============================
+     NAVIGATION
+============================ -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <div class="logo-shell">
+      <img class="nav-logo-svg" src="images/Logo/470894537_17891580084134476_2369760557983885793_n.jpg" alt="AKV Hyjnesha Logo" />
+    </div>
+    <div class="nav-logo-text">AKV <span>"Hyjnesha"</span></div>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('de')">DE</button>
+      <button class="lang-btn" onclick="setLang('al')">AL</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="index.html#events" class="nav-back">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+      </svg>
+      <span data-lang="de" class="inline">Zur&uuml;ck</span>
+      <span data-lang="al" class="inline">Kthehu</span>
+      <span data-lang="en" class="inline">Back</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ============================
+     PAGE HEADER
+============================ -->
+<header class="page-header">
+  <div class="page-tag">
+    <span data-lang="de" class="inline">Chronik &mdash; AKV Hyjnesha</span>
+    <span data-lang="al" class="inline">Kronologji &mdash; AKV Hyjnesha</span>
+    <span data-lang="en" class="inline">Chronicle &mdash; AKV Hyjnesha</span>
+  </div>
+  <h1 class="page-title">
+    <span data-lang="de">Unsere <em>Auftritte</em></span>
+    <span data-lang="al">Paraqitjet <em>tona</em></span>
+    <span data-lang="en">Our <em>Performances</em></span>
+  </h1>
+  <div class="page-divider"><span></span><div class="dot"></div><span></span></div>
+</header>
+
+<!-- ============================
+     BLOG ARTICLES
+============================ -->
+<main class="blog-container">
+
+  <!-- ======================================
+       EVENT 1: Piana degli Albanesi Apr 2026
+  ======================================= -->
+  <article class="event-article" id="piana-2026">
+    <div class="article-inner">
+
+      <!-- Hero image -->
+      <div class="article-hero">
+        <img src="images/piana-degli-albanesi-2026.jpg"
+             alt="Piana degli Albanesi 2026"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="article-hero-placeholder" style="display:none;">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+          </svg>
+          <span>Piana degli Albanesi 2026</span>
+        </div>
+        <div class="article-hero-overlay"></div>
+        <div class="article-hero-badge">IT &mdash; 2026</div>
+      </div>
+
+      <!-- Meta -->
+      <div class="article-meta">
+        <div class="article-date-block">
+          <div class="day">04<br/><small style="font-size:0.9rem">–05</small></div>
+          <div class="month">
+            <span data-lang="de" class="inline">Apr 2026</span>
+            <span data-lang="al" class="inline">Prill 2026</span>
+            <span data-lang="en" class="inline">Apr 2026</span>
+          </div>
+        </div>
+        <div class="article-title-block">
+          <div class="article-location">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            Piana degli Albanesi &mdash; Sizilien, Italien
+          </div>
+          <h2 class="article-title">
+            <span data-lang="de">Arb&euml;resh&euml; <em>Kulturabend</em></span>
+            <span data-lang="al">Mbr&euml;mje Kulturore <em>Arb&euml;reshe</em></span>
+            <span data-lang="en">Arb&euml;resh&euml; <em>Cultural Evening</em></span>
+          </h2>
+        </div>
+      </div>
+
+      <!-- Body text -->
+      <div class="article-body">
+        <p>
+          <span data-lang="de" class="inline">Am 4. und 5. April 2026 reiste das AKV &ldquo;Hyjnesha&rdquo; nach Piana degli Albanesi in Sizilien &ndash; einer der bedeutendsten Arb&euml;resh&euml;-Gemeinden Italiens. Im Rahmen eines zweit&auml;gigen Kulturabends pr&auml;sentierten wir traditionelle albanische T&auml;nze und Musik vor einem begeisterten Publikum.</span>
+          <span data-lang="al" class="inline">M&euml; 4 dhe 5 prill 2026, AKV &ldquo;Hyjnesha&rdquo; udh&euml;toi n&euml; Piana degli Albanesi n&euml; Siqeli &ndash; nj&euml; nga komunitet&euml; m&euml; t&euml; r&euml;nd&euml;sishme arb&euml;resh&euml; n&euml; Itali. N&euml; kuadr&euml;n e nj&euml; mbr&euml;mjeje kulturore dyditshe, prezantuam valle dhe muzik&euml; tradicionale shqiptare para nj&euml; publiku t&euml; entuziazmuar.</span>
+          <span data-lang="en" class="inline">On April 4 and 5, 2026, AKV &ldquo;Hyjnesha&rdquo; traveled to Piana degli Albanesi in Sicily &ndash; one of the most significant Arb&euml;resh&euml; communities in Italy. During a two-day cultural evening, we presented traditional Albanian dances and music to an enthusiastic audience.</span>
+        </p>
+        <p>
+          <span data-lang="de" class="inline">Die Veranstaltung war ein emotionales Erlebnis &ndash; eine Begegnung zweier albanischer Kulturen, die durch Jahrhunderte der Diaspora miteinander verbunden sind.</span>
+          <span data-lang="al" class="inline">Ngjarja ishte nj&euml; p&euml;rjetim emocional &ndash; nj&euml; takim i dy kulturave shqiptare, t&euml; lidhura nga shekuj diaspora&euml;.</span>
+          <span data-lang="en" class="inline">The event was an emotional experience &ndash; a meeting of two Albanian cultures connected by centuries of diaspora.</span>
+        </p>
+      </div>
+
+      <!-- Image grid — Platzhalter, Ordner: images/auftritte/piana-2026/ -->
+      <div class="article-images">
+        <div class="images-label">
+          <span data-lang="de" class="inline">Impressionen</span>
+          <span data-lang="al" class="inline">Impresione</span>
+          <span data-lang="en" class="inline">Impressions</span>
+        </div>
+        <div class="img-grid cols-3">
+          <!-- Slot 1: Grosses Bild links -->
+          <div class="img-item h-280 span-2" onclick="openImg(this)">
+            <div class="img-placeholder-slot" style="height:100%;">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
+              <span>Foto kommt</span>
+            </div>
+          </div>
+          <!-- Slot 2 -->
+          <div class="img-item h-280" onclick="openImg(this)">
+            <div class="img-placeholder-slot" style="height:100%;">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
+              <span>Foto kommt</span>
+            </div>
+          </div>
+          <!-- Slot 3 -->
+          <div class="img-item h-200" onclick="openImg(this)">
+            <div class="img-placeholder-slot" style="height:100%;">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
+              <span>Foto kommt</span>
+            </div>
+          </div>
+          <!-- Slot 4 -->
+          <div class="img-item h-200" onclick="openImg(this)">
+            <div class="img-placeholder-slot" style="height:100%;">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
+              <span>Foto kommt</span>
+            </div>
+          </div>
+          <!-- Slot 5 -->
+          <div class="img-item h-200" onclick="openImg(this)">
+            <div class="img-placeholder-slot" style="height:100%;">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
+              <span>Foto kommt</span>
+            </div>
+          </div>
+        </div>
+        <!-- Bildordner-Hinweis (nur im Entwicklungsmodus sichtbar, kann entfernt werden) -->
+        <p style="font-size:0.55rem;color:rgba(255,255,255,0.15);margin-top:0.6rem;letter-spacing:0.1em;">
+          Bilder: images/auftritte/piana-2026/
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <div class="article-divider"><span></span><div class="dot"></div><span></span></div>
+
+  <!-- ======================================
+       EVENT 2: Kapfenberg Mär 2026
+  ======================================= -->
+  <article class="event-article" id="kapfenberg-2026">
+    <div class="article-inner">
+
+      <div class="article-hero">
+        <div class="article-hero-placeholder">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+          </svg>
+          <span>Kapfenberg 2026 &mdash; Titelbild kommt</span>
+        </div>
+        <div class="article-hero-overlay"></div>
+        <div class="article-hero-badge">AT &mdash; 2026</div>
+      </div>
+
+      <div class="article-meta">
+        <div class="article-date-block">
+          <div class="day" style="font-size:1.4rem;">&mdash;</div>
+          <div class="month">
+            <span data-lang="de" class="inline">M&auml;r 2026</span>
+            <span data-lang="al" class="inline">Mar 2026</span>
+            <span data-lang="en" class="inline">Mar 2026</span>
+          </div>
+        </div>
+        <div class="article-title-block">
+          <div class="article-location">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            Kapfenberg &mdash; &Ouml;sterreich
+          </div>
+          <h2 class="article-title">
+            <span data-lang="de">Auftritt <em>Kapfenberg</em></span>
+            <span data-lang="al">Paraqitje <em>Kapfenberg</em></span>
+            <span data-lang="en">Performance <em>Kapfenberg</em></span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="article-body">
+        <p>
+          <span data-lang="de" class="inline">Im M&auml;rz 2026 trat das AKV &ldquo;Hyjnesha&rdquo; in Kapfenberg auf und begeisterte das &ouml;sterreichische Publikum mit einem Programm aus traditionellen albanischen T&auml;nzen und Gesang.</span>
+          <span data-lang="al" class="inline">N&euml; mars 2026, AKV &ldquo;Hyjnesha&rdquo; performoi n&euml; Kapfenberg dhe entuziazmoi publikun austriak me nj&euml; program me valle dhe k&euml;ng&euml; tradicionale shqiptare.</span>
+          <span data-lang="en" class="inline">In March 2026, AKV &ldquo;Hyjnesha&rdquo; performed in Kapfenberg, captivating the Austrian audience with a programme of traditional Albanian dances and songs.</span>
+        </p>
+      </div>
+
+      <div class="article-images">
+        <div class="images-label">
+          <span data-lang="de" class="inline">Impressionen</span>
+          <span data-lang="al" class="inline">Impresione</span>
+          <span data-lang="en" class="inline">Impressions</span>
+        </div>
+        <div class="img-grid cols-2">
+          <div class="img-item h-260" onclick="openImg(this)">
+            <div class="img-placeholder-slot" style="height:100%;">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
+              <span>Foto kommt</span>
+            </div>
+          </div>
+          <div class="img-item h-260" onclick="openImg(this)">
+            <div class="img-placeholder-slot" style="height:100%;">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
+              <span>Foto kommt</span>
+            </div>
+          </div>
+          <div class="img-item h-200" onclick="openImg(this)">
+            <div class="img-placeholder-slot" style="height:100%;">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
+              <span>Foto kommt</span>
+            </div>
+          </div>
+          <div class="img-item h-200" onclick="openImg(this)">
+            <div class="img-placeholder-slot" style="height:100%;">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
+              <span>Foto kommt</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:0.55rem;color:rgba(255,255,255,0.15);margin-top:0.6rem;letter-spacing:0.1em;">
+          Bilder: images/auftritte/kapfenberg-2026/
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+  <div class="article-divider"><span></span><div class="dot"></div><span></span></div>
+
+  <!-- ======================================
+       EVENT 3: Tirana 2025
+  ======================================= -->
+  <article class="event-article" id="tirana-2025">
+    <div class="article-inner">
+
+      <div class="article-hero">
+        <div class="article-hero-placeholder">
+          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+          </svg>
+          <span>Tirana 2025 &mdash; Titelbild kommt</span>
+        </div>
+        <div class="article-hero-overlay"></div>
+        <div class="article-hero-badge">AL &mdash; 2025</div>
+      </div>
+
+      <div class="article-meta">
+        <div class="article-date-block">
+          <div class="day" style="font-size:1.4rem;">&mdash;</div>
+          <div class="month">2025</div>
+        </div>
+        <div class="article-title-block">
+          <div class="article-location">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            Tirana &mdash; Albanien
+          </div>
+          <h2 class="article-title">
+            <span data-lang="de">Auftritt <em>Tirana</em></span>
+            <span data-lang="al">Paraqitje <em>Tiran&euml;</em></span>
+            <span data-lang="en">Performance <em>Tirana</em></span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="article-body">
+        <p>
+          <span data-lang="de" class="inline">2025 reiste das Ensemble in die albanische Hauptstadt Tirana und trat dort in einem kulturellen Rahmen auf. Ein unvergessliches Erlebnis &ndash; als Gr&auml;zer Ensemble in der Heimat des albanischen Volkes zu performen.</span>
+          <span data-lang="al" class="inline">N&euml; vitin 2025, ansambli udh&euml;toi n&euml; kryeqytetin shqiptar Tiran&euml; dhe performoi atje n&euml; nj&euml; kuadr&euml; kulturor. Nj&euml; p&euml;rjetim i paharruesh&euml;m &ndash; t&euml; performosh si ansambel grazian n&euml; shtit&euml;pin&euml; e popullit shqiptar.</span>
+          <span data-lang="en" class="inline">In 2025, the ensemble travelled to the Albanian capital Tirana and performed there in a cultural setting. An unforgettable experience &ndash; performing as a Graz ensemble in the homeland of the Albanian people.</span>
+        </p>
+      </div>
+
+      <div class="article-images">
+        <div class="images-label">
+          <span data-lang="de" class="inline">Impressionen</span>
+          <span data-lang="al" class="inline">Impresione</span>
+          <span data-lang="en" class="inline">Impressions</span>
+        </div>
+        <div class="img-grid cols-3">
+          <div class="img-item h-240" onclick="openImg(this)">
+            <div class="img-placeholder-slot" style="height:100%;">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
+              <span>Foto kommt</span>
+            </div>
+          </div>
+          <div class="img-item h-240" onclick="openImg(this)">
+            <div class="img-placeholder-slot" style="height:100%;">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
+              <span>Foto kommt</span>
+            </div>
+          </div>
+          <div class="img-item h-240" onclick="openImg(this)">
+            <div class="img-placeholder-slot" style="height:100%;">
+              <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M13.5 12a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
+              <span>Foto kommt</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:0.55rem;color:rgba(255,255,255,0.15);margin-top:0.6rem;letter-spacing:0.1em;">
+          Bilder: images/auftritte/tirana-2025/
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+</main>
+
+<!-- ============================
+     FOOTER
+============================ -->
+<footer class="page-footer">
+  <div class="page-footer-logo">AKV <span>"Hyjnesha"</span></div>
+  <p>Graz &bull; Austria &bull; Est. 2022 &bull; &copy; 2026</p>
+</footer>
+
+<script>
+  /* --- Language switcher --- */
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+    });
+    localStorage.setItem('hyjnesha-lang', lang);
+  }
+  const savedLang = localStorage.getItem('hyjnesha-lang') || 'de';
+  setLang(savedLang);
+
+  /* --- Navbar scroll --- */
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  /* --- Scroll reveal --- */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.event-article').forEach(el => observer.observe(el));
+
+  /* --- Lightbox --- */
+  function openImg(el) {
+    const img = el.querySelector('img');
+    if (!img) return;
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
