@@ -1,0 +1,182 @@
+{
+  "nav": {
+    "rehearsals": "Proben",
+    "events": "Veranstaltungen",
+    "announcements": "Ankündigungen",
+    "members": "Mitglieder",
+    "settings": "Einstellungen",
+    "logout": "Abmelden"
+  },
+  "auth": {
+    "title": "Anmelden",
+    "subtitle": "Mitgliederbereich",
+    "emailLabel": "E-Mail-Adresse",
+    "emailPlaceholder": "deine@email.com",
+    "sendLink": "Magic Link senden",
+    "sending": "Sende Link...",
+    "checkEmail": "Bitte prüfe deine E-Mails",
+    "checkEmailDesc": "Wir haben dir einen Anmeldelink an {email} gesendet.",
+    "backToLogin": "Zurück zur Anmeldung",
+    "error": "Fehler beim Senden des Links. Bitte versuche es erneut."
+  },
+  "dashboard": {
+    "title": "Willkommen",
+    "nextRehearsal": "Nächste Probe",
+    "nextEvent": "Nächste Veranstaltung",
+    "noUpcomingRehearsal": "Keine kommenden Proben",
+    "noUpcomingEvent": "Keine kommenden Veranstaltungen",
+    "recentAnnouncements": "Aktuelle Ankündigungen",
+    "noAnnouncements": "Keine Ankündigungen",
+    "viewAll": "Alle ansehen",
+    "unreadAnnouncements": "{count} ungelesene Ankündigung(en)"
+  },
+  "rehearsal": {
+    "title": "Proben",
+    "new": "Neue Probe",
+    "noUpcoming": "Keine kommenden Proben",
+    "details": "Probendetails",
+    "location": "Ort",
+    "time": "Uhrzeit",
+    "notes": "Anmerkungen",
+    "recurring": "Wöchentlich",
+    "recurrenceDay": "Wochentag",
+    "recurrenceTime": "Zeit",
+    "create": "Probe erstellen",
+    "creating": "Erstelle...",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "deleteConfirm": "Möchtest du diese Probe wirklich löschen?",
+    "deleteSuccess": "Probe wurde gelöscht.",
+    "form": {
+      "titleDe": "Titel (Deutsch)",
+      "titleSq": "Titel (Albanisch)",
+      "date": "Datum",
+      "time": "Uhrzeit",
+      "location": "Ort",
+      "notesDe": "Anmerkungen (Deutsch)",
+      "notesSq": "Anmerkungen (Albanisch)",
+      "isRecurring": "Wöchentlich wiederkehrend",
+      "recurrenceDay": "Wochentag",
+      "recurrenceTime": "Wiederholungszeit"
+    },
+    "days": {
+      "MON": "Montag",
+      "TUE": "Dienstag",
+      "WED": "Mittwoch",
+      "THU": "Donnerstag",
+      "FRI": "Freitag",
+      "SAT": "Samstag",
+      "SUN": "Sonntag"
+    }
+  },
+  "event": {
+    "title": "Veranstaltungen",
+    "new": "Neue Veranstaltung",
+    "noUpcoming": "Keine kommenden Veranstaltungen",
+    "details": "Veranstaltungsdetails",
+    "location": "Ort",
+    "time": "Uhrzeit",
+    "meetupTime": "Treffpunkt",
+    "dressCode": "Kleidung",
+    "notes": "Anmerkungen",
+    "locationLink": "Karte öffnen",
+    "create": "Veranstaltung erstellen",
+    "creating": "Erstelle...",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "deleteConfirm": "Möchtest du diese Veranstaltung wirklich löschen?",
+    "type": {
+      "performance": "Auftritt",
+      "wedding": "Hochzeit",
+      "festival": "Festival",
+      "other": "Sonstiges"
+    },
+    "form": {
+      "titleDe": "Titel (Deutsch)",
+      "titleSq": "Titel (Albanisch)",
+      "date": "Datum",
+      "time": "Uhrzeit",
+      "location": "Ort",
+      "eventType": "Veranstaltungstyp",
+      "dressCode": "Kleidungsvorschrift",
+      "meetupTime": "Treffpunktzeit",
+      "locationUrl": "Karten-Link",
+      "notesDe": "Anmerkungen (Deutsch)",
+      "notesSq": "Anmerkungen (Albanisch)"
+    }
+  },
+  "announcement": {
+    "title": "Ankündigungen",
+    "new": "Neue Ankündigung",
+    "noAnnouncements": "Keine Ankündigungen vorhanden",
+    "create": "Ankündigung erstellen",
+    "creating": "Erstelle...",
+    "delete": "Löschen",
+    "deleteConfirm": "Möchtest du diese Ankündigung wirklich löschen?",
+    "unread": "Ungelesen",
+    "postedBy": "Erstellt von",
+    "form": {
+      "titleDe": "Titel (Deutsch)",
+      "titleSq": "Titel (Albanisch)",
+      "bodyDe": "Text (Deutsch)",
+      "bodySq": "Text (Albanisch)"
+    }
+  },
+  "member": {
+    "title": "Mitglieder",
+    "invite": "Mitglied einladen",
+    "inviteEmail": "E-Mail-Adresse",
+    "inviteSend": "Einladung senden",
+    "inviteSending": "Sende...",
+    "inviteSuccess": "Einladung gesendet.",
+    "inviteError": "Fehler beim Senden der Einladung.",
+    "changeRole": "Rolle ändern",
+    "roleAdmin": "Administrator",
+    "roleMember": "Mitglied",
+    "joined": "Mitglied seit",
+    "noMembers": "Keine Mitglieder gefunden"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "displayName": "Anzeigename",
+    "displayNamePlaceholder": "Dein Name",
+    "language": "Sprache",
+    "save": "Speichern",
+    "saving": "Speichere...",
+    "saved": "Gespeichert",
+    "error": "Fehler beim Speichern."
+  },
+  "rsvp": {
+    "yes": "Ja",
+    "no": "Nein",
+    "maybe": "Vielleicht",
+    "attending": "{count} Zusagen",
+    "attendingOne": "1 Zusage",
+    "yourStatus": "Deine Antwort",
+    "notResponded": "Noch nicht geantwortet",
+    "attendees": "Teilnehmer",
+    "noAttendees": "Noch keine Zusagen"
+  },
+  "common": {
+    "loading": "Lädt...",
+    "error": "Ein Fehler ist aufgetreten",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "close": "Schließen",
+    "confirm": "Bestätigen",
+    "back": "Zurück",
+    "required": "Pflichtfeld",
+    "optional": "Optional",
+    "adminOnly": "Nur für Admins",
+    "on": "am",
+    "at": "um",
+    "postedOn": "Erstellt am"
+  },
+  "offline": {
+    "title": "Du bist offline",
+    "subtitle": "Bitte prüfe deine Internetverbindung und versuche es erneut.",
+    "retry": "Erneut versuchen"
+  }
+}
