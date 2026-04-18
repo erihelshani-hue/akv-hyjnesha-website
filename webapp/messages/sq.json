@@ -1,0 +1,182 @@
+{
+  "nav": {
+    "rehearsals": "Prova",
+    "events": "Ngjarje",
+    "announcements": "Njoftime",
+    "members": "Anëtarë",
+    "settings": "Cilësimet",
+    "logout": "Dilni"
+  },
+  "auth": {
+    "title": "Hyrja",
+    "subtitle": "Zona e anëtarëve",
+    "emailLabel": "Adresa e emailit",
+    "emailPlaceholder": "emaili@juaj.com",
+    "sendLink": "Dërgo lidhjen magjike",
+    "sending": "Duke dërguar...",
+    "checkEmail": "Kontrolloni emailin tuaj",
+    "checkEmailDesc": "Kemi dërguar një lidhje hyrjeje në {email}.",
+    "backToLogin": "Kthehu në hyrje",
+    "error": "Gabim gjatë dërgimit të lidhjes. Ju lutemi provoni përsëri."
+  },
+  "dashboard": {
+    "title": "Mirë se vini",
+    "nextRehearsal": "Prova e ardhshme",
+    "nextEvent": "Ngjarja e ardhshme",
+    "noUpcomingRehearsal": "Nuk ka prova të ardhshme",
+    "noUpcomingEvent": "Nuk ka ngjarje të ardhshme",
+    "recentAnnouncements": "Njoftime të fundit",
+    "noAnnouncements": "Nuk ka njoftime",
+    "viewAll": "Shiko të gjitha",
+    "unreadAnnouncements": "{count} njoftime të palexuara"
+  },
+  "rehearsal": {
+    "title": "Provat",
+    "new": "Provë e re",
+    "noUpcoming": "Nuk ka prova të ardhshme",
+    "details": "Detajet e provës",
+    "location": "Vendi",
+    "time": "Ora",
+    "notes": "Shënime",
+    "recurring": "Javore",
+    "recurrenceDay": "Dita e javës",
+    "recurrenceTime": "Ora",
+    "create": "Krijo provën",
+    "creating": "Duke krijuar...",
+    "edit": "Ndrysho",
+    "delete": "Fshi",
+    "deleteConfirm": "A dëshironi ta fshini këtë provë?",
+    "deleteSuccess": "Prova u fshi.",
+    "form": {
+      "titleDe": "Titulli (Gjermanisht)",
+      "titleSq": "Titulli (Shqip)",
+      "date": "Data",
+      "time": "Ora",
+      "location": "Vendi",
+      "notesDe": "Shënime (Gjermanisht)",
+      "notesSq": "Shënime (Shqip)",
+      "isRecurring": "Javore",
+      "recurrenceDay": "Dita e javës",
+      "recurrenceTime": "Ora e përsëritjes"
+    },
+    "days": {
+      "MON": "E hënë",
+      "TUE": "E martë",
+      "WED": "E mërkurë",
+      "THU": "E enjte",
+      "FRI": "E premte",
+      "SAT": "E shtunë",
+      "SUN": "E diel"
+    }
+  },
+  "event": {
+    "title": "Ngjarjet",
+    "new": "Ngjarje e re",
+    "noUpcoming": "Nuk ka ngjarje të ardhshme",
+    "details": "Detajet e ngjarjes",
+    "location": "Vendi",
+    "time": "Ora",
+    "meetupTime": "Pika e takimit",
+    "dressCode": "Veshja",
+    "notes": "Shënime",
+    "locationLink": "Hap hartën",
+    "create": "Krijo ngjarjen",
+    "creating": "Duke krijuar...",
+    "edit": "Ndrysho",
+    "delete": "Fshi",
+    "deleteConfirm": "A dëshironi ta fshini këtë ngjarje?",
+    "type": {
+      "performance": "Performancë",
+      "wedding": "Dasëm",
+      "festival": "Festival",
+      "other": "Tjetër"
+    },
+    "form": {
+      "titleDe": "Titulli (Gjermanisht)",
+      "titleSq": "Titulli (Shqip)",
+      "date": "Data",
+      "time": "Ora",
+      "location": "Vendi",
+      "eventType": "Lloji i ngjarjes",
+      "dressCode": "Kodi i veshjes",
+      "meetupTime": "Ora e takimit",
+      "locationUrl": "Lidhja e hartës",
+      "notesDe": "Shënime (Gjermanisht)",
+      "notesSq": "Shënime (Shqip)"
+    }
+  },
+  "announcement": {
+    "title": "Njoftime",
+    "new": "Njoftim i ri",
+    "noAnnouncements": "Nuk ka njoftime",
+    "create": "Krijo njoftimin",
+    "creating": "Duke krijuar...",
+    "delete": "Fshi",
+    "deleteConfirm": "A dëshironi ta fshini këtë njoftim?",
+    "unread": "E palexuar",
+    "postedBy": "Postuar nga",
+    "form": {
+      "titleDe": "Titulli (Gjermanisht)",
+      "titleSq": "Titulli (Shqip)",
+      "bodyDe": "Teksti (Gjermanisht)",
+      "bodySq": "Teksti (Shqip)"
+    }
+  },
+  "member": {
+    "title": "Anëtarët",
+    "invite": "Fto anëtar",
+    "inviteEmail": "Adresa e emailit",
+    "inviteSend": "Dërgo ftesën",
+    "inviteSending": "Duke dërguar...",
+    "inviteSuccess": "Ftesa u dërgua.",
+    "inviteError": "Gabim gjatë dërgimit të ftesës.",
+    "changeRole": "Ndrysho rolin",
+    "roleAdmin": "Administrator",
+    "roleMember": "Anëtar",
+    "joined": "Anëtar që nga",
+    "noMembers": "Nuk u gjet asnjë anëtar"
+  },
+  "settings": {
+    "title": "Cilësimet",
+    "displayName": "Emri i shfaqur",
+    "displayNamePlaceholder": "Emri juaj",
+    "language": "Gjuha",
+    "save": "Ruaj",
+    "saving": "Duke ruajtur...",
+    "saved": "U ruajt",
+    "error": "Gabim gjatë ruajtjes."
+  },
+  "rsvp": {
+    "yes": "Po",
+    "no": "Jo",
+    "maybe": "Ndoshta",
+    "attending": "{count} konfirmime",
+    "attendingOne": "1 konfirmim",
+    "yourStatus": "Përgjigja juaj",
+    "notResponded": "Ende pa përgjigje",
+    "attendees": "Pjesëmarrësit",
+    "noAttendees": "Ende pa konfirmime"
+  },
+  "common": {
+    "loading": "Duke ngarkuar...",
+    "error": "Ndodhi një gabim",
+    "save": "Ruaj",
+    "cancel": "Anulo",
+    "delete": "Fshi",
+    "edit": "Ndrysho",
+    "close": "Mbyll",
+    "confirm": "Konfirmo",
+    "back": "Kthehu",
+    "required": "E detyrueshme",
+    "optional": "Fakultative",
+    "adminOnly": "Vetëm për administratorët",
+    "on": "më",
+    "at": "në orën",
+    "postedOn": "Postuar më"
+  },
+  "offline": {
+    "title": "Je jashtë linje",
+    "subtitle": "Ju lutemi kontrolloni lidhjen tuaj me internetin dhe provoni përsëri.",
+    "retry": "Provo përsëri"
+  }
+}
