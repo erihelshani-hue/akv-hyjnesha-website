@@ -25,6 +25,26 @@
     font-family: var(--font-inter), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+
+  /* Suppress iOS tap flash on interactive elements */
+  a, button, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* iOS safe-area padding utility */
+  .safe-top    { padding-top:    env(safe-area-inset-top); }
+  .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+
+  /* Main content padding-bottom accounts for bottom nav + safe area on mobile */
+  .pb-safe-nav {
+    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom) + 1.5rem);
+  }
+  @media (min-width: 768px) {
+    .pb-safe-nav { padding-bottom: 2rem; }
   }
 
   h1, h2, h3, h4, h5, h6 {
