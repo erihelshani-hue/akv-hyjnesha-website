@@ -35,6 +35,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  document.querySelectorAll("[data-events-tab]").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const target = tab.dataset.eventsTab;
+
+      document.querySelectorAll("[data-events-tab]").forEach((btn) => {
+        const isActive = btn === tab;
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-pressed", String(isActive));
+      });
+
+      document.querySelectorAll("[data-events-panel]").forEach((panel) => {
+        const isActive = panel.dataset.eventsPanel === target;
+        panel.classList.toggle("active", isActive);
+        panel.hidden = !isActive;
+      });
+    });
+  });
+
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -45,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.05, rootMargin: "0px 0px -20px 0px" }
   );
 
   document.querySelectorAll("[data-reveal]").forEach((el) => {
