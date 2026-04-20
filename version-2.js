@@ -1,5 +1,12 @@
 let currentLang = "sq";
 
+const topicLabels = {
+  booking: { sq: "Kërkesë për rezervim", de: "Buchungsanfrage", en: "Booking request" },
+  press:   { sq: "Shtypi",              de: "Presse",           en: "Press" },
+  partner: { sq: "Partner",             de: "Partner",          en: "Partner" },
+  community:{ sq: "Community",          de: "Community",        en: "Community" },
+};
+
 function setLang(lang) {
   currentLang = lang;
   localStorage.setItem("akv-lang-v2", lang);
@@ -11,6 +18,11 @@ function setLang(lang) {
 
   document.querySelectorAll(".nav-lang button").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.lang === lang);
+  });
+
+  document.querySelectorAll("[data-topic-select] option").forEach((opt) => {
+    const labels = topicLabels[opt.value];
+    if (labels) opt.textContent = labels[lang] || labels.sq;
   });
 }
 

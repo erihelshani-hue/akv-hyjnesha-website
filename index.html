@@ -233,7 +233,7 @@
       </div>
       <div class="video-grid">
         <article class="video-card video-card--native" data-reveal>
-          <video controls preload="metadata" playsinline>
+          <video controls preload="metadata" playsinline poster="images/IMG_5633.jpg">
             <source src="videos/Aufzeichnung 2026-04-20 200906.mp4" type="video/mp4" />
           </video>
           <div class="video-info">
@@ -242,7 +242,7 @@
           </div>
         </article>
         <article class="video-card video-card--native" data-reveal>
-          <video controls preload="metadata" playsinline>
+          <video controls preload="metadata" playsinline poster="images/IMG_2835.JPG">
             <source src="videos/WhatsApp Video 2026-04-20 at 20.06.52.mp4" type="video/mp4" />
           </video>
           <div class="video-info">
@@ -430,11 +430,11 @@
             <div class="form-row"><label><span class="lang" data-lang="de">Name</span><span class="lang active" data-lang="sq">Emri</span><span class="lang" data-lang="en">Name</span></label><input required name="name" /></div>
             <div class="form-row"><label>E-Mail</label><input type="email" required name="email" /></div>
           </div>
-          <div class="form-row"><label><span class="lang" data-lang="de">Betreff</span><span class="lang active" data-lang="sq">Tema</span><span class="lang" data-lang="en">Subject</span></label><select name="topic">
-            <option><span class="lang" data-lang="de">Buchungsanfrage</span><span class="lang active" data-lang="sq">K&euml;rkes&euml; p&euml;r rezervim</span><span class="lang" data-lang="en">Booking request</span></option>
-            <option><span class="lang" data-lang="de">Presse</span><span class="lang active" data-lang="sq">Shtypi</span><span class="lang" data-lang="en">Press</span></option>
-            <option>Partner</option>
-            <option>Community</option>
+          <div class="form-row"><label><span class="lang" data-lang="de">Betreff</span><span class="lang active" data-lang="sq">Tema</span><span class="lang" data-lang="en">Subject</span></label><select name="topic" data-topic-select>
+            <option value="booking">Kërkesë për rezervim / Buchungsanfrage / Booking request</option>
+            <option value="press">Shtypi / Presse / Press</option>
+            <option value="partner">Partner</option>
+            <option value="community">Community</option>
           </select></div>
           <div class="form-row"><label><span class="lang" data-lang="de">Nachricht</span><span class="lang active" data-lang="sq">Mesazhi</span><span class="lang" data-lang="en">Message</span></label><textarea required name="message"></textarea></div>
           <button type="submit" class="btn btn-light"><span class="lang" data-lang="de">Senden</span><span class="lang active" data-lang="sq">D&euml;rgo</span><span class="lang" data-lang="en">Send</span> <span aria-hidden="true">-&gt;</span></button>
