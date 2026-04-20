@@ -158,11 +158,17 @@ function initLightbox() {
   const lbImg     = lb.querySelector(".lb-img");
   const lbCaption = lb.querySelector(".lb-caption");
 
+  function getGalleryCaption(img) {
+    const captionKey = { sq: "captionSq", de: "captionDe", en: "captionEn" }[currentLang] || "captionSq";
+    return img.dataset[captionKey] || img.dataset.captionSq || img.alt;
+  }
+
   function openLightbox(index) {
     currentIndex = (index + galleryItems.length) % galleryItems.length;
+    const caption = getGalleryCaption(galleryItems[currentIndex]);
     lbImg.src            = galleryItems[currentIndex].src;
     lbImg.alt            = galleryItems[currentIndex].alt;
-    lbCaption.textContent = galleryItems[currentIndex].alt;
+    lbCaption.textContent = caption;
     lb.classList.add("active");
     document.body.style.overflow = "hidden";
     lb.querySelector(".lb-close").focus();
@@ -179,7 +185,7 @@ function initLightbox() {
     item.style.cursor = "pointer";
     item.setAttribute("role", "button");
     item.setAttribute("tabindex", "0");
-    item.setAttribute("aria-label", `Bild öffnen: ${img.alt}`);
+    item.setAttribute("aria-label", img.alt);
     item.addEventListener("click", () => openLightbox(i));
     item.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLightbox(i); }
