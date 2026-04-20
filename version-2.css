@@ -136,7 +136,7 @@ em { font-style: italic; }
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url("images/akv-new/landing_picture.png");
+  background-image: url("images/landing_picture.png");
   background-size: cover;
   background-position: center 30%;
   filter: saturate(1.1) contrast(1.05);
@@ -396,9 +396,10 @@ em { font-style: italic; }
 .leader { position: relative; aspect-ratio: 3/4; overflow: hidden; border-radius: 4px; background: var(--bg-elev); }
 .leader-img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.85) contrast(1.05); transition: transform 0.8s, filter 0.4s; }
 .leader-img-xheylane { object-position: center 35%; }
-.leader-img-dilaver { filter: grayscale(1) contrast(1.08) brightness(0.92); object-position: center top; }
+.leader-img-dilaver { filter: grayscale(1) contrast(1.12) brightness(0.9); object-position: center top; }
 .leader-img-logo { object-fit: contain; padding: 3rem; background: #050302; }
 .leader:hover .leader-img { transform: scale(1.04); filter: saturate(1.1) contrast(1); }
+.leader:hover .leader-img-dilaver { filter: grayscale(1) contrast(1.12) brightness(0.92); }
 .leader-overlay {
   position: absolute;
   inset: 0;

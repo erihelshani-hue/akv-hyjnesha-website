@@ -2,10 +2,10 @@
 let currentLang = localStorage.getItem("akv-lang-v2") || "sq";
 
 const topicLabels = {
-  booking:  { sq: "Kërkesë për rezervim", de: "Buchungsanfrage",   en: "Booking request" },
-  press:    { sq: "Shtypi",               de: "Presse",             en: "Press"           },
-  partner:  { sq: "Partner",              de: "Partner",            en: "Partner"         },
-  community:{ sq: "Community",            de: "Community",          en: "Community"       },
+  booking: { sq: "K\u00ebrkes\u00eb p\u00ebr rezervim", de: "Buchungsanfrage", en: "Booking request" },
+  press: { sq: "Shtypi", de: "Presse", en: "Press" },
+  partner: { sq: "Partner", de: "Partner", en: "Partner" },
+  community: { sq: "Community", de: "Community", en: "Community" },
 };
 
 function setLang(lang) {
