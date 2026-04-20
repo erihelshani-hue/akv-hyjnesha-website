@@ -36,9 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const nav = document.querySelector(".nav");
-  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 40);
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  if (nav) {
+    const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
 
   const mobileBtn = document.querySelector(".nav-mobile");
   const navLinks  = document.querySelector(".nav-links");
