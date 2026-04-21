@@ -895,10 +895,21 @@ em { font-style: italic; }
   background: #15120d;
   border-color: rgba(218, 173, 82, 0.42);
 }
+.sponsors-logos .sponsor-logo-card:nth-child(2) {
+  padding: 0.35rem;
+  overflow: hidden;
+  background: #15120d;
+  border-color: rgba(218, 173, 82, 0.42);
+}
 .sponsor-logo-card img {
   max-width: 100%;
   max-height: 86px;
   object-fit: contain;
+}
+.sponsors-logos .sponsor-logo-card:nth-child(2) img {
+  width: auto;
+  height: 120px;
+  max-height: 100%;
 }
 .sponsor {
   min-height: 92px;
