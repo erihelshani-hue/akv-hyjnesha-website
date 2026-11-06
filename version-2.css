@@ -136,9 +136,9 @@ em { font-style: italic; }
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url("images/akv-new/landing_picture.png");
+  background-image: url("images/akv-new/graz-shqiponja-hero.jpg");
   background-size: cover;
-  background-position: center 30%;
+  background-position: center 86%;
   filter: saturate(1.1) contrast(1.05);
   animation: slowZoom 22s ease-out forwards;
 }
@@ -474,6 +474,9 @@ em { font-style: italic; }
 .g-5 { grid-column: span 3; grid-row: span 3; }
 .g-6 { grid-column: span 5; grid-row: span 2; }
 .g-7, .g-8, .g-9 { grid-column: span 4; grid-row: span 2; }
+.g-10, .g-11 { grid-column: span 6; grid-row: span 4; }
+.g-10 img { object-position: center 35%; }
+.g-11 img { object-position: center 80%; }
 
 .videos { background: var(--bg); }
 .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
@@ -1073,6 +1076,7 @@ em { font-style: italic; }
   .valle-row strong { justify-self: start; }
   .gallery-grid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 110px; }
   .g-1, .g-2, .g-3, .g-4, .g-5, .g-6, .g-7, .g-8, .g-9 { grid-column: span 2; grid-row: span 2; }
+  .g-10, .g-11 { grid-column: span 2; grid-row: span 3; }
   .press-kit { position: static; }
 }
 
